@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="ko">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Unsloth Trainer Output</title>
+        <link rel="stylesheet" href="/assets/train.css">
+    </head>
+    <body>
+        <nav>
+            <ul class="nav-left">
+                <li><a href="/">Home</a></li>
+                <li><a href="/train">Train</a></li>
+                <li><a href="/fuzz">Fuzz</a></li>
+                <li><a href="/chat">Chat</a></li>
+            </ul>
+            <ul class="nav-right">
+                {% if not is_logged_in %}
+                <li><a href="/login">Login</a></li>
+                <li><a href="/register">Register</a></li>
+                {% else %}
+                <li><a href="#">{{ username }}</a></li>
+                <li><a href="/logout">Logout</a></li>
+                {% endif %}
+            </ul>
+        </nav>
+        <div class="container">
+            <div class="left-panel">
+                <h2>CSV Preview</h2>
+                <label for="attack-type">Select Attack Type:</label>
+                <select id="attack-type">
+                    <option value="SQL Injection">SQL Injection</option>
+                    <option value="XSS">XSS</option>
+                    <option value="RCE">RCE</option>
+                    <option value="File Inclusion">File Inclusion</option>
+                </select>
+        
+                <input type="file" id="csv-file" accept=".csv" />
+                <button id="upload-btn">Upload</button>
+
+                <button id="train-btn" style="display: none;">Train</button>
+        
+                <table id="csv-table">
+                    <thead>
+                        <tr id="table-header"></tr>
+                    </thead>
+                    <tbody id="table-body"></tbody>
+                </table>
+            </div>
+        
+            <div class="right-panel">
+                <h1>Unsloth Trainer Output</h1>
+                <!-- 학습 로그 테이블 추가 -->
+                <table id="log-table">
+                    <thead>
+                        <tr>
+                            <th>시간</th>
+                            <th>로그</th>
+                        </tr>
+                    </thead>
+                    <tbody id="log-body"></tbody>
+                </table>
+            </div>
+        </div>
+        <script src="/assets/train.js"></script>  
+    </body>
+</html>

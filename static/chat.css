@@ -1,0 +1,184 @@
+/* 전체 페이지 스타일 */
+html, body {
+    height: 100%;
+    margin: 0;
+}
+
+body {
+    display: flex; /* Flexbox 사용 */
+    justify-content: center; /* 가로 중앙 정렬 */
+    align-items: center; /* 세로 중앙 정렬 */
+    height: 100vh; /* 뷰포트 높이에 맞추기 */
+    background-color: #1e1e1e;
+    color: #ffffff;
+    padding: 0;
+    font-family: Arial, sans-serif;
+    overflow: hidden; /* 스크롤 방지 */
+}
+
+.container {
+    background-color: #2e2e2e; /* 컨테이너 배경색 */
+    border-radius: 10px; /* 모서리 둥글게 */
+    padding: 20px; /* 내부 패딩 */
+    max-width: 600px; /* 최대 너비 설정 */
+    width: 100%; /* 100% 너비 */
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5); /* 그림자 효과 */
+}
+
+.chat-section {
+    margin-top: 20px; /* 채팅 섹션 위쪽 여백 */
+}
+
+.messages {
+    background-color: #272c34; /* 메시지 배경색 */
+    border-radius: 5px; /* 모서리 둥글게 */
+    padding: 10px; /* 내부 패딩 */
+    max-height: 500px; /* 최대 높이 설정 */
+    overflow-y: auto; /* 세로 스크롤 가능 */
+    margin-bottom: 10px; /* 아래쪽 여백 */
+    display: flex; /* Flexbox 사용 */
+    flex-direction: column; /* 세로 방향으로 정렬 */
+    scrollbar-width: thin; /* Firefox에서 스크롤바 얇게 */
+    scrollbar-color: #007BFF #272c34; /* 스크롤바 색상 설정 */
+}
+
+/* 코드 블록 스타일 */
+pre {
+    background-color: #1e1e1e; /* 코드 블록 배경색 */
+    color: #ffffff; /* 코드 텍스트 색상 */
+    padding: 10px; /* 내부 패딩 */
+    border-radius: 5px; /* 모서리 둥글게 */
+    overflow-x: auto; /* 가로 스크롤 가능 */
+    white-space: pre; /* 공백 유지 */
+    margin: 0; /* 기본 마진 제거 */
+    position: relative /* 언어 표시를 위한 위치 설정 */
+}
+
+.language-label {
+    position: absolute; /* 언어 표시를 위한 절대 위치 */
+    top: -10px; /* 위쪽 위치 */
+    left: 10px; /* 왼쪽 위치 */
+    background-color: #007BFF; /* 배경색 */
+    color: white; /* 글씨 색상 */
+    padding: 2px 5px; /* 패딩 */
+    border-radius: 3px; /* 모서리 둥글게 */
+    font-size: 12px; /* 글씨 크기 */
+}
+
+code {
+    color: #61dafb; /* 코드 색상 */
+}
+
+/* Webkit 기반 브라우저(Chrome, Safari 등)에서 스크롤바 스타일링 */
+.messages::-webkit-scrollbar {
+    width: 8px; /* 스크롤바 너비 */
+}
+
+.messages::-webkit-scrollbar-track {
+    background: #272c34; /* 스크롤바 배경 */
+    border-radius: 5px; /* 모서리 둥글게 */
+}
+
+.messages::-webkit-scrollbar-thumb {
+    background-color: #007BFF; /* 스크롤바 색상 */
+    border-radius: 5px; /* 모서리 둥글게 */
+}
+
+.messages::-webkit-scrollbar-thumb:hover {
+    background-color: #0056b3; /* 호버 시 색상 변경 */
+}
+
+.message {
+    margin: 5px 0; /* 여백 조정 */
+    padding: 10px; /* 내부 패딩 */
+    border-radius: 5px; /* 모서리 둥글게 */
+    max-width: 80%; /* 최대 너비 설정 */
+    word-wrap: break-word; /* 긴 단어를 줄 바꿈 */
+}
+
+.user-message {
+    background-color: #007BFF; /* 사용자 메시지 배경색 */
+    color: white; /* 글씨 색상 */
+    align-self: flex-end; /* 오른쪽 정렬 */
+}
+
+.bot-message {
+    background-color: #87a728; /* 봇 메시지 배경색 */
+    color: white; /* 글씨 색상 */
+    align-self: flex-start; /* 왼쪽 정렬 */
+}
+
+input[type="text"] {
+    width: calc(100% - 20px); /* 입력창의 너비 계산 */
+    padding: 10px; /* 내부 패딩 */
+    border: 1px solid #555; /* 테두리 색상 */
+    border-radius: 5px; /* 모서리 둥글게 */
+    background-color: #3e3e3e; /* 배경색 */
+    color: #ffffff; /* 텍스트 색상 */
+    transition: all 0.3s ease; /* 부드러운 전환 효과 */
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.3); /* 그림자 효과 */
+}
+
+input[type="text"]:focus {
+    outline: none; /* 포커스 시 밑선 제거 */
+    border: 1px solid #007BFF; /* 포커스 시 테두리 색상 */
+    box-shadow: 0 0 10px rgba(0, 123, 255, 0.5); /* 포커스 시 그림자 효과 */
+}
+
+button {
+    width: 100%; /* 전체 너비 차지 */
+    padding: 10px; /* 내부 패딩 */
+    background-color: #007BFF; /* 버튼 배경색 */
+    color: white; /* 글씨 색상 */
+    border: none; /* 테두리 없음 */
+    border-radius: 5px; /* 모서리 둥글게 */
+    cursor: pointer; /* 커서 포인터 */
+    transition: background-color 0.3s ease; /* 부드러운 전환 효과 */
+}
+
+button:hover {
+    background-color: #0056b3; /* 버튼 호버 시 색상 변경 */
+}
+
+/* 네비게이션 바 스타일 */
+nav {
+    background-color: #2e2e2e;
+    padding: 10px 20px;
+    width: 100%;
+    position: fixed;
+    top: 0;
+    z-index: 1000;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+    display: flex;
+    justify-content: space-between; /* 양쪽 끝에 정렬 */
+    align-items: center;
+}
+
+.nav-left, .nav-right {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+}
+
+.nav-left li, .nav-right li {
+    margin: 0 20px; /* 항목 간의 간격 */
+}
+
+nav a {
+    color: #ffffff;
+    text-decoration: none;
+    font-weight: bold;
+    font-size: 16px;
+    line-height: 1.5;
+}
+
+nav a:hover {
+    text-decoration: underline;
+}
+
+.nav-right {
+    margin-left: auto; /* 오른쪽으로 밀어냄 */
+    display: flex; /* 내부 항목을 수평 정렬 */
+    align-items: center; /* 수직 정렬 */
+}

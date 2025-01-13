@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>LLM Web Service</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prettify/r298/prettify.min.css">
+    <link rel="stylesheet" href="/assets/index.css">
+    <script src="https://cdn.jsdelivr.net/gh/google/code-prettify@master/loader/run_prettify.js"></script>
+    <script src="/assets/index.js"></script>
+</head>
+<body>
+    <nav>
+        <ul class="nav-left">
+            <li><a href="/">Home</a></li>
+            <li><a href="/train">Train</a></li>
+            <li><a href="/fuzz">Fuzz</a></li>
+            <li><a href="/chat">Chat</a></li>
+        </ul>
+        <ul class="nav-right">
+            {% if not is_logged_in %}
+            <li><a href="/login">Login</a></li>
+            <li><a href="/register">Register</a></li>
+            {% else %}
+            <li><a href="#">{{ username }}</a></li>
+            <li><a href="/logout">Logout</a></li>
+            {% endif %}
+        </ul>
+    </nav>
+    <div class="container">
+        <h1>LangServe Playground</h1>
+        <label for="attack">Try it Inputs</label>
+        <select id="attack">
+            <option value="SQL Injection">SQL Injection</option>
+            <option value="XSS">XSS</option>
+            <option value="RCE">RCE</option>
+            <option value="File Inclusion">File Inclusion</option>
+        </select>
+        <div style="display: flex; align-items: center;">
+            <button id="sendButton">Send Request</button>
+            <div class="loader" id="loader"></div>
+        </div>
+        <h2>YAML Download Link</h2>
+        <div class="response" id="response"></div>
+    </div>
+</body>
+</html>

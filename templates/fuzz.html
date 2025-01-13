@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fuzzing Page</title>
+    <link rel="stylesheet" href="/assets/fuzz.css">
+</head>
+<body>
+    <nav>
+        <ul class="nav-left">
+            <li><a href="/">Home</a></li>
+            <li><a href="/train">Train</a></li>
+            <li><a href="/fuzz">Fuzz</a></li>
+            <li><a href="/chat">Chat</a></li>
+        </ul>
+        <ul class="nav-right">
+            {% if not is_logged_in %}
+            <li><a href="/login">Login</a></li>
+            <li><a href="/register">Register</a></li>
+            {% else %}
+            <li><a href="#">{{ username }}</a></li>
+            <li><a href="/logout">Logout</a></li>
+            {% endif %}
+        </ul>
+    </nav>
+    <div class="container">
+        <div class="left-panel">
+            <h2>Fuzzing Target</h2>
+            <div class="input-group">
+                <input type="text" id="target-url" placeholder="Enter target URL or IP" />
+            </div>
+            <div class="input-group flex-group">
+                <label>
+                    <input type="checkbox" id="ai-option" onchange="showAttackTypeModal()"> AI 사용
+                </label>
+                <span id="selected-value" style="margin-left: 10px; color: #ffffff;"></span>
+                <div class="button-group">
+                    <button id="select-nuclei-btn">Select Nuclei Options</button>
+                    <button id="attack-btn">Start Fuzzing</button>
+                </div>
+            </div>
+            <!-- 선택한 옵션을 출력할 테이블 추가 -->
+            <h3>선택한 Nuclei 옵션</h3>
+            <table id="selected-options-table">
+                <thead>
+                    <tr>
+                        <th>옵션</th>
+                        <th>값</th>
+                    </tr>
+                </thead>
+                <tbody id="selected-options-body"></tbody>
+            </table>
+        </div>
+    
+        <div class="right-panel">
+            <h1>Nuclei Output</h1>
+            <div id="output-area"></div>
+        </div>
+    </div>
+
+    <!-- 공격 유형 선택 모달 -->
+    <div id="attack-type-modal" class="modal">
+        <div class="modal-content">
+            <span class="close" onclick="closeAttackTypeModal()">&times;</span>
+            <h2>공격 유형 선택</h2>
+            <div class="select-container">
+                <select id="attack-type">
+                    <option value="">선택하세요</option>
+                    <option value="SQL Injection">SQL Injection</option>
+                    <option value="XSS">XSS</option>
+                    <option value="RCE">RCE</option>
+                    <option value="File Inclusion">File Inclusion</option>
+                </select>
+            </div>
+            <div class="button-container">
+                <button id="confirm-attack-type-btn" onclick="confirmAttackType()">확인</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Nuclei 옵션 모달 -->
+    <div id="nuclei-modal" class="modal">
+        <div class="modal-content">
+            <span class="close">&times;</span>
+            <h2>Select Nuclei Options</h2>
+            <h3>Nuclei options : <a class="nuclei-link" href="https://github.com/projectdiscovery/nuclei/blob/dev/README_KR.md">Link</a></h3>
+            {% for category, options in nuclei_options.items() %}
+                <h4>{{ category }}</h4>
+                {% for option, details in options.items() %}
+                <div class="nuclei-option-group">
+                    <label>
+                        <input type="checkbox" class="nuclei-option" value="{{ option }}"> {{ option }}
+                    </label>
+                    {% if details[1] %}
+                    <input type="text" class="nuclei-value" placeholder="값 입력">
+                    {% endif %}
+                    <button class="info-button" onclick="showInfo('{{ option }}')">옵션 정보</button>
+                </div>
+                {% endfor %}
+            {% endfor %}
+            <button id="confirm-nuclei-btn">Confirm Selection</button>
+        </div>
+    </div>
+
+    <!-- 옵션 정보 모달 -->
+    <div id="info-modal" class="modal">
+        <div class="modal-content">
+            <span class="close" onclick="closeInfoModal()">&times;</span>
+            <h2 id="info-title"></h2>
+            <p id="info-description"></p>
+            <button onclick="closeInfoModal()">닫기</button>
+        </div>
+    </div>
+
+    <script id="hidden-data" type="application/json">
+        {{ nuclei_options | tojson }}
+    </script>
+
+    <script src="/assets/fuzz.js"></script>  
+</body>
+</html>

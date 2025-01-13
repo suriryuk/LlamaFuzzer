@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>로그인 페이지</title>
+    <link rel="stylesheet" href="/assets/login.css">
+</head>
+<body>
+    {% if error_message %}
+    <script>
+        alert("{{ error_message }}");
+        window.location.href = "/login";
+    </script>
+    {% endif %}
+    <div class="container">
+        <h2>로그인</h2>
+        <form id="loginForm" action="/login" method="post">
+            <input type="text" id="username" placeholder="사용자 이름(ID)" name="username" required>
+            <input type="password" id="password" placeholder="비밀번호" name="password" required>
+            <button type="submit">로그인</button>
+        </form>
+        <p><a href="/register">회원가입</a></p>
+    </div>
+    <script src="/assets/login.js"></script>
+</body>
+</html>

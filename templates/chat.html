@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>LangServe Playground</title>
+    
+    <!-- Highlight.js CSS -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.3.1/styles/default.min.css">
+    <link rel="stylesheet" href="/assets/chat.css"> <!-- CSS 파일 연결 -->
+    <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.3.1/highlight.min.js"></script>
+    <script src="/assets/chat.js" defer></script> <!-- JS 파일 연결 -->
+</head>
+<body>
+    <nav>
+        <ul class="nav-left">
+            <li><a href="/">Home</a></li>
+            <li><a href="/train">Train</a></li>
+            <li><a href="/fuzz">Fuzz</a></li>
+            <li><a href="/chat">Chat</a></li>
+        </ul>
+        <ul class="nav-right">
+            {% if not is_logged_in %}
+            <li><a href="/login">Login</a></li>
+            <li><a href="/register">Register</a></li>
+            {% else %}
+            <li><a href="#">{{ username }}</a></li>
+            <li><a href="/logout">Logout</a></li>
+            {% endif %}
+        </ul>
+    </nav>
+    <div class="container">
+        <h1>🦜 LangServe Playground</h1>
+        <div class="chat-section">
+            <h2>Chat</h2>
+            <div class="messages" id="messages"></div>
+            <input id="userInput" type="text" placeholder="질문을 입력하세요." />
+            <button id="sendButton">Send</button>
+        </div>
+    </div>
+</body>
+</html>

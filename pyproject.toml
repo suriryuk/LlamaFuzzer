@@ -1,0 +1,47 @@
+[tool.poetry]
+name = "aifuzzer"
+version = "0.1.0"
+description = "AI Fuzzer"
+authors = ["suriryuk"]
+readme = "README.md"
+
+[tool.poetry.dependencies]
+python = "^3.12"
+datasets = "^3.2.0"
+fastapi = "^0.115.6"
+torch = {version = "^2.5.1+cu124", source = "pytorch"}
+torchvision = {version = "^0.20.1+cu124", source = "pytorch"}
+torchaudio = {version = "^2.5.1+cu124", source = "pytorch"}
+trl = "^0.12.2"
+wandb = "^0.19.1"
+peft = "^0.14.0"
+bitsandbytes = "^0.45.0"
+packaging = "^24.2"
+ninja = "^1.11.1.2"
+einops = "^0.8.0"
+pandas = "^2.2.3"
+numpy = "2.2.0"
+matplotlib = "^3.9.4"
+xformers = "^0.0.28.post3"
+uvicorn = "^0.32.1"
+sqlalchemy = "^2.0.36"
+pydantic = "^2.10.3"
+aiosqlite = "^0.20.0"
+passlib = "^1.7.4"
+python-jose = "^3.3.0"
+python-multipart = "^0.0.19"
+websockets = "^14.1"
+langchain = "^0.3.12"
+langchain-ollama = "^0.2.1"
+transformers = "4.46.3"
+unsloth-zoo = {git = "https://github.com/unslothai/unsloth-zoo.git"}
+unsloth = "^2024.12.8"
+
+[[tool.poetry.source]]
+name = "pytorch"
+url = "https://download.pytorch.org/whl/cu124"
+priority = "explicit"
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"

