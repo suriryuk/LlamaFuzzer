@@ -1,3 +1,6 @@
+# This project uses the unsloth library (https://github.com/unsloth/unsloth),
+# licensed under the Apache 2.0 License
+
 from unsloth import FastLanguageModel, is_bfloat16_supported
 from datasets import Dataset
 from trl import SFTTrainer

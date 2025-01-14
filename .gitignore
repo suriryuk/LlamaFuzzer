@@ -1,11 +1,24 @@
+# test file
 test.py
 sqlite.db
+
+# fine-tuning model (big)
 /results/
 /models/
+
 /llama.cpp/
+
+# fine-tuning result
 /wandb/
+
+# python cache
 __pycache__/
+
 _unsloth_sentencepiece_temp/
+
+# log file
 AIFuzz.log
-github_api.txt
-.gitignore
+
+# junk
+*.txt
+*.yaml
