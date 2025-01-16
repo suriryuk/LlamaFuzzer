@@ -67,7 +67,7 @@ class UnslothTrainer:
         # 모델 초기화
         self.model = FastLanguageModel.get_peft_model(
             self.model,
-            r=16, # 8, 16, 32, 64, 128 권장
+            r=64, # 8, 16, 32, 64, 128 권장
             lora_alpha=16,
             lora_dropout=0, # dropout 지원
             target_modules=[
@@ -95,7 +95,6 @@ class UnslothTrainer:
     def load_dataset(self, filename):
         try:
             # load dataset
-            # df = pd.read_csv(f"./ai/csv/{self.attack_map[self.attack]}_payload.csv", encoding='latin1')
             df = pd.read_csv(f"./csv/{filename}", encoding='latin1')
 
             # Dataframe to JSON
@@ -155,8 +154,6 @@ class UnslothTrainer:
                     learning_rate=2e-4,
                     fp16=not is_bfloat16_supported(),
                     bf16=is_bfloat16_supported(),
-                    # fp16=not torch.cuda.is_bf16_supported(),
-                    # bf16=torch.cuda.is_bf16_supported(),
                     optim="adamw_8bit",
                     weight_decay=0.01,
                     lr_scheduler_type="linear",
@@ -202,10 +199,6 @@ class UnslothTrainer:
 
             logger('Modelfile Generate End', mode='INFO')
             await websocket.send_text('Modelfile Generate End')
-
-            # print(self.tokenizer._ollama_modelfile)
-            # with open(f'{base}/Modelfile', 'w') as f:
-            #     f.write(self.tokenizer._ollama_modelfile)
         except Exception as e:
             logger(f'Model Fine-Tuning Error : {e}', mode='ERROR')
             await websocket.send_text(f'Model Fine-Tuning Error : {e}')

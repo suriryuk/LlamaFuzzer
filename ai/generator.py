@@ -101,3 +101,5 @@ async def process_fuzz_payload(attack: str):
     file_path = "./ai/payloads.yaml"
     with open(file_path, 'w') as f:
         f.write(nuclei_template)
+
+    return nuclei_template

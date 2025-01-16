@@ -19,6 +19,7 @@ from api.models.models import User
 
 from ai.train import UnslothTrainer
 from ai.generator import process_chat, process_fuzz_payload
+from ai.template import template_format
 
 from utils import attack_map, nuclei_options, hash_password, verify_password, create_access_token, decode_access_token
 
@@ -111,6 +112,22 @@ async def payload(
     
     return templates.TemplateResponse("payload.html", {"request": request, "is_logged_in": is_logged_in, "username": username})
 
+# Generate Payload
+@router.websocket('/ws/payload')
+async def generate_payload(websocket: WebSocket):
+    await websocket.accept()
+
+    try:
+        message = await websocket.receive_text()
+        data = json.loads(message)
+        payload_yaml = await process_fuzz_payload(data['attack'])
+
+        await websocket.send_text(payload_yaml)
+    except Exception as e:
+        print(f"Error : {str(e)}")
+    finally:
+        await websocket.close()
+
 # LLM Fine-Tuning Page
 @router.get('/train', response_class=HTMLResponse)
 async def train(
@@ -142,7 +159,7 @@ async def upload_csv(file: UploadFile = File(...)):
     return {'preview': preview}
 
 # Fine-Tuning 요청을 처리하는 웹 소켓
-@router.websocket('/ws')
+@router.websocket('/ws/train')
 async def train_websocket_endpoint(websocket: WebSocket):
     await websocket.accept()
 
@@ -209,7 +226,7 @@ async def fuzzing(websocket: WebSocket):
             try:
                 await websocket.send_text('AI payload generation start')
                 # AI Payload 생성
-                await process_fuzz_payload(request_data['attack'])
+                payload_yaml = await process_fuzz_payload(request_data['attack'])
                 await websocket.send_text('AI payload generation success')
                 arguments.append('-t')
                 arguments.append(f'./ai/payloads.yaml')

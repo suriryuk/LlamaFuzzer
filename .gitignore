@@ -14,11 +14,12 @@ sqlite.db
 # python cache
 __pycache__/
 
-_unsloth_sentencepiece_temp/
+# unsloth temp file
+_unsloth_*
 
 # log file
 AIFuzz.log
 
 # junk
 *.txt
-*.yaml
+*.csv

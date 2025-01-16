@@ -57,7 +57,7 @@ document.getElementById("train-btn").addEventListener("click", function() {
     const fileName = fileInput.files[0].name; // 업로드한 파일 이름
 
     // 웹 소켓 연결
-    const socket = new WebSocket(`ws://${window.location.host}/ws`);
+    const socket = new WebSocket(`ws://${window.location.host}/ws/train`);
 
     socket.onopen = function() {
         // 웹 소켓이 열리면 파일 이름과 공격 타입을 전송
