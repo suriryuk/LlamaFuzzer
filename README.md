@@ -37,10 +37,10 @@ Attack Type을 선택하고, 요청을 보내면 LLM 모델이 생성한 Payload
 Train 페이지는 LLM 모델을 학습시킬 수 있는 페이지입니다.
 
 학습 데이터셋을 업로드하고 Train 버튼을 누르면 서버에서 학습이 진행됩니다. 학습 데이터셋은 다음 표의 형식을 따릅니다.
-|cve|tag|payload|url|
-|---|---|---|---|
-|payload의 cve 코드|payload의 공격 타입|공격에 사용되는 payload|payload를 수집한 출처|
-|cve 코드가 없다면 Null 값도 가능|공격 이름을 지정||출처의 링크 사입|
+||cve|tag|payload|url|
+|---|---|---|---|---|
+|값|payload의 cve 코드|payload의 공격 타입|공격에 사용되는 payload|payload를 수집한 출처|
+|비고|cve 코드가 없다면 Null 값도 가능|공격 이름을 지정||출처의 링크 사입|
 
 학습 진행 상황은 로그를 통해 확인할 수 있습니다.
 
