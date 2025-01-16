@@ -1,13 +1,11 @@
 from api.routes import router
-from api.utils.db import init_db, get_db
-from api.models.models import User
+from api.utils.db import init_db
 
 from fastapi import FastAPI
 from fastapi.staticfiles import StaticFiles
 from contextlib import asynccontextmanager
 
 import logging
-import argparse
 
 # FastAPI 서버가 실행되고 종료될 때 실행되는 함수 정의 ( 최근에는 lifespan을 사용할 것을 권장하는 중 )
 @asynccontextmanager
