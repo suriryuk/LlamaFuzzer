@@ -31,7 +31,7 @@ nuclei_options = {
 
 pwd_context = CryptContext(schemes=["bcrypt"], deprecated="auto")
 
-SECRET_KEY = "i93mflzni2kf42ofkjknvlzoi2"
+SECRET_KEY = "[YOUR_SECRET_KEY]"
 ALGORITHM = "HS256"
 ACCESS_TOKEN_EXPIRE_MINUTES = 30
 

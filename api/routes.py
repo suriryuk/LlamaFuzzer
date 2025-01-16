@@ -1,6 +1,7 @@
-from fastapi import APIRouter, HTTPException, status, WebSocket, WebSocketDisconnect, Request, UploadFile, Form, Cookie, Depends, File
+from fastapi import APIRouter, HTTPException, status, WebSocket, WebSocketDisconnect,Request, UploadFile, Form, Cookie, Depends, File
 from fastapi.templating import Jinja2Templates
 from fastapi.responses import HTMLResponse, RedirectResponse
+from starlette.websockets import WebSocketState
 
 from sqlalchemy.ext.asyncio import AsyncSession
 from sqlalchemy.future import select
@@ -96,6 +97,19 @@ async def index(
         return RedirectResponse(url='/login', status_code=status.HTTP_302_FOUND)
 
     return templates.TemplateResponse("index.html", {"request": request, "is_logged_in": is_logged_in, "username": username})
+
+# Generate Payload Page
+@router.get('/payload', response_class=HTMLResponse)
+async def payload(
+    request: Request,
+    SessionToken: Annotated[str | None, Cookie()] = None
+):
+    # 세션 검증
+    is_logged_in, username = await auth_login(SessionToken)
+    if not is_logged_in:
+        return RedirectResponse(url='/login', status_code=status.HTTP_302_FOUND)
+    
+    return templates.TemplateResponse("payload.html", {"request": request, "is_logged_in": is_logged_in, "username": username})
 
 # LLM Fine-Tuning Page
 @router.get('/train', response_class=HTMLResponse)
@@ -219,7 +233,8 @@ async def fuzzing(websocket: WebSocket):
     except Exception as e:
         await websocket.send_text(f"Error : {e}")
     finally:
-        await websocket.close()
+        if websocket.client_state == WebSocketState.CONNECTED:
+            await websocket.close()
 
 # LLM과 채팅하는 페이지
 @router.get('/chat', response_class=HTMLResponse)
@@ -249,7 +264,9 @@ async def chat(websocket: WebSocket):
             question = await websocket.receive_text()
             print(question)
 
-            if question == '끝':
+
+            if question == '끝' or question == 'end':
+                await websocket.send_text('LlamaFuzzer Chat Finish')
                 break
 
             # 이전 메시지를 기반으로 context 생성
@@ -268,10 +285,10 @@ async def chat(websocket: WebSocket):
     except WebSocketDisconnect:
         print('Client Disconnected.')
     except Exception as e:
-        await websocket.send_text(f"Error: {e}")
+        print(f"Error: {e}")
     finally:
-        await websocket.send_text(f'LLM chat finish')
-        await websocket.close()
+        if websocket.client_state == WebSocketState.CONNECTED:
+            await websocket.close()
 
 # Login Page
 @router.get('/login', response_class=HTMLResponse)
@@ -295,10 +312,6 @@ async def login_user(
             {"request": request, "error_message": error_message},
             status_code=status.HTTP_401_UNAUTHORIZED,
         )
-        # raise HTTPException(
-        #     status_code=status.HTTP_401_UNAUTHORIZED,
-        #     detail='Invalid username or password'
-        # )
     
     # 로그인 성공 시 JWT 발급
     access_token = create_access_token(data={"sub": user.username})
