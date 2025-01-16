@@ -11,6 +11,15 @@ FastAPI를 활용하여 웹에서 모델 학습, Fuzzing을 할 수 있도록 �
 
 추후에 LLM의 성능을 개선한 버전을 개발할 예정입니다.
 
+## 테스트 환경
+OS : Ubuntu 24.04.1 LTS (WSL 2)
+
+GPU : GeForce RTX 3080 Ti 12GB
+
+RAM : 32GB
+
+Windows에서는 경로 문제로 동작되지 않을 수도 있습니다. Windows에서 실행하실 때는 코드에 정의되어 있는 경로를 잘 확인해주세요.
+
 ## 설치
 LlamaFuzzer를 설치하기 전, poetry와 nuclei를 설치해야 합니다. [poetry 설치](https://python-poetry.org/docs/) [nuclei 설치](https://github.com/projectdiscovery/nuclei)
 ```bash
