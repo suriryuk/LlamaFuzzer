@@ -1,6 +1,6 @@
 from fastapi import APIRouter, HTTPException, status, WebSocket, WebSocketDisconnect,Request, UploadFile, Form, Cookie, Depends, File
 from fastapi.templating import Jinja2Templates
-from fastapi.responses import HTMLResponse, RedirectResponse
+from fastapi.responses import HTMLResponse, RedirectResponse, FileResponse, JSONResponse
 from starlette.websockets import WebSocketState
 
 from sqlalchemy.ext.asyncio import AsyncSession
@@ -26,6 +26,8 @@ from utils import attack_map, nuclei_options, hash_password, verify_password, cr
 router = APIRouter()
 
 templates = Jinja2Templates(directory="templates")
+
+VIEW_PATH = 'view'
 
 # SQL : SELECT * FROM users WHERE username=username LIMIT 1
 async def get_user_by_username(db: AsyncSession, username: str):
@@ -120,13 +122,26 @@ async def generate_payload(websocket: WebSocket):
     try:
         message = await websocket.receive_text()
         data = json.loads(message)
+        # Payload 생성
         payload_yaml = await process_fuzz_payload(data['attack'])
 
-        await websocket.send_text(payload_yaml)
+        # 결과를 파일로 저장하여 View Link로 남김
+        try:
+            if not os.path.exists(VIEW_PATH):
+                os.makedirs(VIEW_PATH)
+        except OSError:
+            print('File Path Create Failed')
+            await websocket.close()
+        file_path = os.path.join(VIEW_PATH, 'payloads.yaml')
+        with open(file_path, 'w') as f:
+            f.write(payload_yaml)
+
+        await websocket.send_text(json.dumps(payload_yaml))
     except Exception as e:
         print(f"Error : {str(e)}")
     finally:
-        await websocket.close()
+        if websocket.client_state == WebSocketState.CONNECTED:
+            await websocket.close()
 
 # LLM Fine-Tuning Page
 @router.get('/train', response_class=HTMLResponse)
@@ -189,7 +204,8 @@ async def train_websocket_endpoint(websocket: WebSocket):
     except Exception as e:
         await websocket.send_text(f"Error : {str(e)}")
     finally:
-        await websocket.close()
+        if websocket.client_state == WebSocketState.CONNECTED:
+            await websocket.close()
 
 # 퍼징을 수행하는 페이지
 @router.get('/fuzz', response_class=HTMLResponse)
@@ -387,3 +403,20 @@ async def logout(
     response = RedirectResponse(url="/", status_code=status.HTTP_302_FOUND)
     response.delete_cookie('SessionToken')
     return response
+
+# payload 파일을 반환하는 페이지
+@router.get('/view/payloads.yaml')
+async def view_file():
+    file_path = os.path.join(VIEW_PATH, 'payloads.yaml')
+
+    if os.path.exists(file_path):
+        return FileResponse(file_path)
+    return HTMLResponse(
+        content="""
+            <script>
+                alert('File Not Found');
+                history.go(-1);
+            </script>
+        """,
+        status_code=status.HTTP_404_NOT_FOUND
+    )

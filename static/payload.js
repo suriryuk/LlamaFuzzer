@@ -28,7 +28,7 @@ function sendRequest() {
         // 제목 및 응답 표시
         document.querySelector("h2").style.display = "block"; // 제목 보이기
         responseElement.style.display = "block"; // 응답 div 보이기
-        responseElement.innerHTML = `<a href="/downloads/payloads.yaml" target="_blank">Download Payload Templates.</a>`;
+        responseElement.innerHTML = `<a href="/view/payloads.yaml" target="_blank">View Payload Templates.</a>`;
     };
 
     socket.onclose = function() {
