@@ -29,20 +29,30 @@
         </ul>
     </nav>
     <div class="container">
-        <h1>LangServe Playground</h1>
-        <label for="attack">Try it Inputs</label>
-        <select id="attack">
-            <option value="SQL Injection">SQL Injection</option>
-            <option value="XSS">XSS</option>
-            <option value="RCE">RCE</option>
-            <option value="File Inclusion">File Inclusion</option>
-        </select>
-        <div style="display: flex; align-items: center;">
-            <button id="sendButton">Send Request</button>
-            <div class="loader" id="loader"></div>
+        <div class="left-panel">
+            <h1>LangServe Playground</h1>
+            <div class="input-group">
+                <label for="attack">Try it Inputs</label>
+                <select id="attack">
+                    <option value="SQL Injection">SQL Injection</option>
+                    <option value="XSS">XSS</option>
+                    <option value="RCE">RCE</option>
+                    <option value="File Inclusion">File Inclusion</option>
+                </select>
+            </div>
+            <div class="flex-group">
+                <div class="button-group">
+                    <button id="sendButton">Send Request</button>
+                    <div class="loader" id="loader"></div>
+                </div>
+            </div>
+            <h2>YAML Download Link</h2>
+            <div class="response" id="response"></div>
         </div>
-        <h2>YAML View Link</h2>
-        <div class="response" id="response"></div>
+        <div class="right-panel">
+            <h2>YAML Viewer</h2>
+            <div id="output-area" class="output"></div>
+        </div>
     </div>
 </body>
 </html>

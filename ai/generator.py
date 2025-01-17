@@ -67,7 +67,7 @@ async def process_fuzz_payload(attack: str):
     # 생성된 payload를 저장할 리스트
     results = []
     i = 1
-    payload_cnt = 50
+    payload_cnt = 5
     while i != (payload_cnt + 1):
         result = await asyncio.to_thread(lambda: chain.invoke(input_data))
         result = result.strip()

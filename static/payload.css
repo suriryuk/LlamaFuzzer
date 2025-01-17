@@ -3,45 +3,112 @@ html, body {
     height: 100%;
     margin: 0;
 }
+
 body {
-    display: flex; /* Flexbox 사용 */
-    justify-content: center; /* 가로 중앙 정렬 */
-    align-items: center; /* 세로 중앙 정렬 */
-    height: 100vh; /* 뷰포트 높이에 맞추기 */
+    display: flex;
+    flex-direction: column;
     background-color: #1e1e1e;
     color: #ffffff;
-    margin: 0; /* 기본 마진 제거 */
-    padding: 0;
     font-family: Arial, sans-serif;
     overflow: hidden; /* 스크롤 방지 */
 }
-h1 {
-    font-size: 2em;
-    margin-bottom: 20px;
+
+/* 네비게이션 바 스타일 */
+nav {
+    background-color: #2e2e2e;
+    padding: 10px 0px; /* 좌우 패딩 조정 */
+    width: 100%;
+    position: fixed;
+    top: 0;
+    z-index: 1000;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+    display: flex;
+    justify-content: space-between; /* 양쪽 끝에 정렬 */
+    align-items: center; /* 수직 정렬 */
 }
+
+/* 네비게이션 항목 스타일 */
+.nav-left, .nav-right {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+}
+
+.nav-left li, .nav-right li {
+    margin: 0 20px; /* 항목 간의 간격 */
+}
+
+nav a {
+    color: #ffffff;
+    text-decoration: none;
+    font-weight: bold;
+    font-size: 16px;
+    line-height: 1.5;
+}
+
+nav a:hover {
+    text-decoration: underline;
+}
+
+.nav-right {
+    margin-left: auto; /* 오른쪽으로 밀어냄 */
+}
+
+/* 컨테이너 스타일 */
 .container {
+    display: flex;
+    justify-content: space-between; /* 양쪽 끝으로 정렬 */
+    padding: 20px;
+    flex-grow: 1; /* 컨테이너가 가능한 공간을 모두 차지하도록 설정 */
+    margin-top: 70px; /* 네비게이션 바와의 간격 */
+}
+
+/* 패널 스타일 */
+.left-panel, .right-panel {
     background-color: #2e2e2e;
     border-radius: 8px;
     padding: 20px;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
-    width: 100%;
-    max-width: 800px;
+    width: 48%; /* 각 패널의 너비 설정 */
     box-sizing: border-box; /* 패딩을 포함한 너비 계산 */
+    overflow: hidden; /* 내용이 넘칠 경우 스크롤 가능 */
 }
-label {
+
+.left-panel {
+    max-height: calc(90vh - 70px);
+}
+
+.right-panel {
+    max-height: calc(90vh - 70px); /* 네비게이션 바와 입력 패널을 고려한 최대 높이 */
+}
+
+/* 입력 그룹 스타일 */
+.input-group {
+    margin-bottom: 15px;
+}
+
+.input-group label {
     display: block;
-    margin-bottom: 10px;
-    font-size: 1.2em;
+    margin-bottom: 5px;
 }
-select {
-    width: 100%;
+
+.input-group input[type="text"] {
+    width: calc(100% - 20px);
     padding: 10px;
-    margin-bottom: 20px;
     border-radius: 5px;
     border: 1px solid #555;
     background-color: #3e3e3e;
     color: #ffffff;
+    transition: border 0.3s;
 }
+
+.input-group input[type="text"]:focus {
+    border: 1px solid #007BFF;
+    outline: none;
+}
+
+/* 버튼 스타일 */
 button {
     padding: 10px 15px;
     background-color: #007BFF;
@@ -50,83 +117,61 @@ button {
     border-radius: 5px;
     cursor: pointer;
     font-size: 1.1em;
-    position: relative;
+    margin-right: 10px; /* 버튼 간 간격 추가 */
 }
+
 button:hover {
     background-color: #0056b3;
 }
-.response {
-    background-color: #272c34;
-    border-radius: 5px;
+
+select {
+    width: 100%;
     padding: 10px;
-    overflow-x: auto;
-    margin-top: 10px;
-    font-family: monospace;
-    white-space: pre-wrap;
-}
-.loader {
-    display: none;
-    border: 3px solid rgba(255, 255, 255, 0.3);
-    border-top: 3px solid #007BFF;
-    border-radius: 50%;
-    width: 20px;
-    height: 20px;
-    animation: spin 1s linear infinite;
-    margin-left: 10px;
-    vertical-align: middle;
-}
-@keyframes spin {
-    0% { transform: rotate(0deg); }
-    100% { transform: rotate(360deg); }
-}
-#response, h2 {
-    display: none;
+    border-radius: 5px;
+    border: 1px solid #555;
+    background-color: #3e3e3e;
+    color: #ffffff;
 }
 
 /* 반응형 설정 */
 @media (max-width: 600px) {
-    h1 {
-        font-size: 1.5em;
+    .container {
+        flex-direction: column; /* 모바일에서는 세로 방향으로 배치 */
     }
-    button {
-        width: 100%;
+    .left-panel, .right-panel {
+        width: 100%; /* 모바일에서는 전체 너비 사용 */
+        margin-right: 0; /* 오른쪽 여백 제거 */
+        margin-bottom: 20px; /* 패널 간 간격 추가 */
     }
 }
 
-/* 네비게이션 바 스타일 */
-nav {
-    background-color: #2e2e2e;
-    padding: 10px 20px;
-    width: 100%;
-    position: fixed;
-    top: 0;
-    z-index: 1000;
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
-    display: flex;
-    justify-content: space-between; /* 양쪽 끝에 정렬 */
-    align-items: center;
-}
-.nav-left, .nav-right {
-    list-style-type: none;
+/* 출력 영역 스타일 */
+#output-area {
+    white-space: pre-wrap; /* 줄바꿈을 허용 */
+    word-wrap: break-word; /* 긴 단어가 줄바꿈되도록 설정 */
     margin: 0;
-    padding: 0;
-    display: flex;
+    padding: 5px;
+    background-color: #3e3e3e; /* 배경색 설정 */
+    border-radius: 5px; /* 모서리 둥글게 */
+    max-height: 90%; /* 최대 높이 설정 */
+    overflow-y: auto; /* 세로 스크롤 가능 */
 }
-.nav-left li, .nav-right li {
-    margin: 0 20px; /* 항목 간의 간격 */
+
+/* 스크롤바 스타일링 */
+#output-area::-webkit-scrollbar {
+    width: 8px; /* 스크롤바의 너비 */
 }
-nav a {
-    color: #ffffff;
-    text-decoration: none;
-    font-weight: bold;
-    font-size: 16px;
-    line-height: 1.5;
+
+#output-area::-webkit-scrollbar-track {
+    background: #4e4e4e; /* 스크롤바 배경 */
+    border-radius: 10px; /* 모서리 둥글게 */
 }
-nav a:hover {
-    text-decoration: underline;
+
+#output-area::-webkit-scrollbar-thumb {
+    background: #888; /* 스크롤바 색상 */
+    border-radius: 10px; /* 모서리 둥글게 */
 }
-.nav-right {
-    margin-left: auto; /* 오른쪽으로 밀어냄 */
-    display: flex; /* 내부 항목을 수평 정렬 */
-    align-items: center; /* 수직 정렬 */
+
+#output-area::-webkit-scrollbar-thumb:hover {
+    background: #555; /* 스크롤바 호버 색상 */
 }
