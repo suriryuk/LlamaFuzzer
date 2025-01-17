@@ -31,12 +31,15 @@ $ poetry install
 ## 사용법
 FastAPI 서버를 실행시키는 방법은 간단합니다. main.py를 실행하기만 하면 됩니다.
 ```bash
+$ poetry shell
 $ python main.py
 ```
 ### Payload
 Payload 페이지는 단순히 LLM 모델이 생성한 Payload만 받아보고 싶을 때 사용하는 페이지입니다.
 
 Attack Type을 선택하고, 요청을 보내면 LLM 모델이 생성한 Payload를 Nuclei Template의 형태로 반환합니다.
+
+Payload 생성을 위해서는 ollama로 모델을 서빙하고 있는 상태여야 합니다.
 
 |<b>Payload Page</b>|
 |:--:|
@@ -66,6 +69,30 @@ $ cd models/SQL_model
 $ ollama create SQL_model -f Modelfile
 ```
 
+### Fuzz
+Fuzz 페이지는 Nuclei Fuzzer를 이용해 Fuzzing을 수행하는 페이지입니다.
+
+Target URL or IP, Nuclei 옵션을 선택하면 기본적인 Fuzzing이 가능합니다.
+
+AI 사용 옵션을 선택하면 LLM 모델이 생성할 Attack Type을 선택하고, Fuzzing을 수행하면 LLM 모델이 생성한 Payload를 이용하여 Fuzzing을 수행합니다.
+
+|<b>Fuzz Page</b>|
+|:--:|
+|![Fuzz image](images/fuzz_page.png)|
+
+### Chat
+Chat 페이지는 LLM 모델과 채팅을 통해 소통할 수 있는 챗봇 서비스 페이지입니다.
+
+현재는 Llama3-ko-bllossom-8b 모델을 사용 중이며, 원하는 LLM 모델로 변경도 가능합니다. (`ai/generator.py`의 `process_chat` 함수)
+```python
+llm = ChatOllama(model='[Model_Name]', temperature=0.9)
+```
+
+'끝'이나 'end' 메시지를 보내면 채팅을 종료할 수 있도록 설정해놓았습니다.
+
+|<b>Chat Page</b>|
+|:--:|
+|![Chat image](images/chat_page.png)|
 ## Open source used
 - [nuclei](https://github.com/projectdiscovery/nuclei): MIT License
 - [unsloth](https://github.com/unsloth/unsloth): Apache 2.0 License
